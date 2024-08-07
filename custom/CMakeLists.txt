@@ -1,3 +1,6 @@
+# Specify the minimum CMake version required
+cmake_minimum_required(VERSION 3.22.1)
+
 message(STATUS "Adding Custom Plugin")
 find_package(Qt6 REQUIRED COMPONENTS Core)
 
@@ -10,17 +13,18 @@ set_property(DIRECTORY ${CMAKE_SOURCE_DIR}
 )
 
 find_package(Python)
-if(PYTHON_FOUND)
+if(Python_FOUND)
     execute_process(
-        COMMAND ${PYTHON_EXECUTABLE}
+        COMMAND ${Python_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/updateqrc.py
+        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
         RESULT_VARIABLE PYTHON_RESULT
         OUTPUT_VARIABLE PYTHON_OUTPUT
         ERROR_VARIABLE PYTHON_ERROR
-        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-        INPUT_FILE updateqrc.py
         OUTPUT_STRIP_TRAILING_WHITESPACE
     )
-    cmake_print_variables(RESULT_VARIABLE OUTPUT_VARIABLE ERROR_VARIABLE)
+    message(STATUS "Python Result: ${PYTHON_RESULT}")
+    message(STATUS "Python Output: ${PYTHON_OUTPUT}")
+    message(STATUS "Python Error: ${PYTHON_ERROR}")
 endif()
 
 # Our own, custom resources
@@ -67,6 +71,7 @@ target_include_directories(CustomPlugin
         ${CMAKE_CURRENT_SOURCE_DIR}/src/FirmwarePlugin
 )
 
+# Uncomment and complete the following if you need to add QML module
 # file(GLOB_RECURSE QML_SOURCES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/res/*.qml)
 # file(GLOB QML_RESOURCES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/res/Images/*.*)
 # qt_add_qml_module(CustomPlugin
@@ -86,3 +91,4 @@ target_include_directories(CustomPlugin
 #         QGroundControl.Palette
 #         QGroundControl.ScreenTools
 # )
+
