@@ -25,7 +25,7 @@ else()
         message(STATUS "Python found: ${PYTHON_EXECUTABLE}")
     else()
         message(FATAL_ERROR "Python not found")
-    fi()
+    endif()
 endif()
 
 # Run the updateqrc.py script
@@ -86,25 +86,4 @@ target_include_directories(CustomPlugin
         ${CMAKE_CURRENT_SOURCE_DIR}/src/AutoPilotPlugin
         ${CMAKE_CURRENT_SOURCE_DIR}/src/FirmwarePlugin
 )
-
-# Uncomment the following lines if you want to add QML modules
-# file(GLOB_RECURSE QML_SOURCES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/res/*.qml)
-# file(GLOB QML_RESOURCES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/res/Images/*.*)
-# qt_add_qml_module(CustomPlugin
-#     URI QGroundControl.CustomPlugin
-#     VERSION 1.0
-#     RESOURCE_PREFIX "/"
-#     QML_FILES ${QML_SOURCES}
-#     RESOURCES ${QML_RESOURCES}
-#     OUTPUT_TARGETS CustomPlugin_targets
-#     IMPORT_PATH ${QT_QML_OUTPUT_DIRECTORY}
-#     IMPORTS
-#         QtQuick
-#         QtQuick.Controls
-#         QtQuick.Layouts
-#         QGroundControl
-#         QGroundControl.Controls
-#         QGroundControl.Palette
-#         QGroundControl.ScreenTools
-# )
 
