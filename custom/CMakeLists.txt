@@ -1,3 +1,7 @@
+cmake_minimum_required(VERSION 3.14)
+
+project(CustomQGCPlugin)
+
 message(STATUS "Adding Custom Plugin")
 find_package(Qt6 REQUIRED COMPONENTS Core)
 
@@ -9,18 +13,34 @@ set_property(DIRECTORY ${CMAKE_SOURCE_DIR}
     CUSTOMCLASS=CustomPlugin
 )
 
-find_package(Python)
-if(PYTHON_FOUND)
+# Ensure Python is found
+find_package(Python3 COMPONENTS Interpreter)
+if (Python3_FOUND)
+    set(PYTHON_EXECUTABLE ${Python3_EXECUTABLE})
+    message(STATUS "Python found: ${Python3_EXECUTABLE}")
+else()
+    find_package(PythonInterp)
+    if (PYTHONINTERP_FOUND)
+        set(PYTHON_EXECUTABLE ${PYTHON_EXECUTABLE})
+        message(STATUS "Python found: ${PYTHON_EXECUTABLE}")
+    else()
+        message(FATAL_ERROR "Python not found")
+    fi()
+endif()
+
+# Run the updateqrc.py script
+if(PYTHON_EXECUTABLE)
     execute_process(
-        COMMAND ${PYTHON_EXECUTABLE}
+        COMMAND ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/updateqrc.py
         RESULT_VARIABLE PYTHON_RESULT
         OUTPUT_VARIABLE PYTHON_OUTPUT
         ERROR_VARIABLE PYTHON_ERROR
         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-        INPUT_FILE updateqrc.py
         OUTPUT_STRIP_TRAILING_WHITESPACE
     )
-    cmake_print_variables(RESULT_VARIABLE OUTPUT_VARIABLE ERROR_VARIABLE)
+    message(STATUS "Python result: ${PYTHON_RESULT}")
+    message(STATUS "Python output: ${PYTHON_OUTPUT}")
+    message(STATUS "Python error: ${PYTHON_ERROR}")
 endif()
 
 # Our own, custom resources
@@ -67,6 +87,7 @@ target_include_directories(CustomPlugin
         ${CMAKE_CURRENT_SOURCE_DIR}/src/FirmwarePlugin
 )
 
+# Uncomment the following lines if you want to add QML modules
 # file(GLOB_RECURSE QML_SOURCES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/res/*.qml)
 # file(GLOB QML_RESOURCES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/res/Images/*.*)
 # qt_add_qml_module(CustomPlugin
@@ -86,3 +107,4 @@ target_include_directories(CustomPlugin
 #         QGroundControl.Palette
 #         QGroundControl.ScreenTools
 # )
+
