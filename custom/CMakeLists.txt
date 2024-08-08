@@ -85,5 +85,16 @@ target_include_directories(CustomPlugin
         ${CMAKE_CURRENT_SOURCE_DIR}/src
         ${CMAKE_CURRENT_SOURCE_DIR}/src/AutoPilotPlugin
         ${CMAKE_CURRENT_SOURCE_DIR}/src/FirmwarePlugin
+        # Add include directories for QGroundControl source
+        ${CMAKE_SOURCE_DIR}/libs
+        ${CMAKE_SOURCE_DIR}/src
+        ${CMAKE_SOURCE_DIR}/src/AutoPilotPlugins/PX4
+        ${CMAKE_SOURCE_DIR}/src/FirmwarePlugin
+        ${CMAKE_SOURCE_DIR}/src/Vehicle
+        ${CMAKE_SOURCE_DIR}/src/FactSystem
+        ${CMAKE_SOURCE_DIR}/src/Settings
+        ${CMAKE_SOURCE_DIR}/src/QtLocationPlugin
+        ${CMAKE_SOURCE_DIR}/src/QmlControls
+        ${CMAKE_SOURCE_DIR}/src/MissionManager
 )
 
