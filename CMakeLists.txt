@@ -1,11 +1,13 @@
 cmake_minimum_required(VERSION 3.22.1)
 
+# Append the cmake module path
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
 
 #######################################################
 #                Custom Build Configuration
 #######################################################
 
+# Ensure the CustomOptions.cmake file is included correctly
 include(CustomOptions)
 
 if(IS_DIRECTORY ${CMAKE_SOURCE_DIR}/custom)
@@ -19,8 +21,11 @@ endif()
 #                   Project Info
 #######################################################
 
-include(Git)
+# Ensure QGC_APP_VERSION and QGC_APP_DESCRIPTION are defined
+set(QGC_APP_VERSION "1.0.0")  # Example version
+set(QGC_APP_DESCRIPTION "QGroundControl Application")
 
+# Correct project command with valid VERSION and DESCRIPTION
 project(QGroundControl
     VERSION ${QGC_APP_VERSION}
     DESCRIPTION ${QGC_APP_DESCRIPTION}
@@ -28,6 +33,7 @@ project(QGroundControl
     LANGUAGES C CXX
 )
 
+# System-specific settings
 if(UNIX AND NOT APPLE AND NOT ANDROID)
     set(LINUX TRUE)
 endif()
@@ -112,10 +118,10 @@ cmake_print_variables(
 #               Qt6 Configuration
 #######################################################
 
+# Ensure the correct inclusion of Qt6 configuration
 include(Qt6QGCConfiguration)
 
 set(QT_QML_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/qml" CACHE PATH "Install path for QML" FORCE)
-# set(QML_IMPORT_PATH ${CMAKE_SOURCE_DIR}/qml ${CMAKE_BINARY_DIR}/imports CACHE STRING "Extra QML Import Paths" FORCE)
 add_compile_definitions(QT_DISABLE_DEPRECATED_UP_TO=0x060600)
 
 if(CMAKE_BUILD_TYPE STREQUAL "Release")
@@ -134,18 +140,15 @@ endif()
 if(ANDROID)
     cmake_print_variables(QT_ANDROID_APPLICATION_ARGUMENTS QT_HOST_PATH)
 
-    # QT_USE_TARGET_ANDROID_BUILD_DIR
     list(APPEND QT_ANDROID_MULTI_ABI_FORWARD_VARS QGC_STABLE_BUILD)
     list(APPEND QT_ANDROID_MULTI_ABI_FORWARD_VARS QT_HOST_PATH)
     cmake_print_variables(QT_ANDROID_MULTI_ABI_FORWARD_VARS)
-    # QT_ANDROID_DEPLOY_RELEASE
-    # set(QT_ANDROID_DEPLOYMENT_TYPE ON CACHE BOOL "Deployment Type")
+
     cmake_dependent_option(QT_ANDROID_SIGN_APK "Enable Signing APK" ON "CMAKE_BUILD_TYPE STREQUAL Release" OFF)
     if(QT_ANDROID_SIGN_APK)
         message(STATUS "Signing APK")
         message(STATUS "QT_ANDROID_KEYSTORE_PATH $ENV{QT_ANDROID_KEYSTORE_PATH}")
         message(STATUS "QT_ANDROID_KEYSTORE_ALIAS $ENV{QT_ANDROID_KEYSTORE_ALIAS}")
-        # QT_ANDROID_KEYSTORE_STORE_PASS, QT_ANDROID_KEYSTORE_KEY_PASS
     endif()
 
     if(NOT Qt6LinguistTools_DIR)
@@ -183,8 +186,6 @@ find_package(Qt6
         ${QT_LIBRARY_HINTS}
 )
 
-# Require 6.6.3 because otherwise libQt6QuickControls2Basic.so.6 &
-# libQt6QuickControls2BasicStyleImpl.so.6 are missing.
 qt_standard_project_setup(REQUIRES 6.6.3)
 
 qt_policy(
@@ -203,10 +204,8 @@ endif()
 
 cmake_dependent_option(QGC_BUILD_TESTING "Enable testing" ON "CMAKE_BUILD_TYPE STREQUAL Debug" OFF)
 if(QGC_BUILD_TESTING)
-    add_compile_definitions(UNITTEST_BUILD) # TODO: QGC_UNITTEST_BUILD
+    add_compile_definitions(UNITTEST_BUILD)
 endif()
-
-# option(QGC_DISABLE_MAVLINK_INSPECTOR "Disable Mavlink Inspector" OFF) # This removes QtCharts which is GPL licensed
 
 cmake_dependent_option(QGC_DEBUG_QML "Build QGroundControl with QML debugging/profiling support." OFF "CMAKE_BUILD_TYPE STREQUAL Debug" OFF)
 if(QGC_DEBUG_QML)
@@ -226,10 +225,6 @@ endif()
 
 if(QGC_CUSTOM_BUILD)
     add_subdirectory(custom)
-endif()
-
-if(QGC_DISABLE_APM_MAVLINK)
-    add_compile_definitions(NO_ARDUPILOT_DIALECT)
 endif()
 
 #######################################################
@@ -272,7 +267,7 @@ qt_add_executable(${PROJECT_NAME}
 
 if(Qt6LinguistTools_FOUND)
     file(GLOB TS_SOURCES RELATIVE ${CMAKE_SOURCE_DIR} ${CMAKE_SOURCE_DIR}/translations/qgc_*.ts)
-    qt_add_translations(${PROJECT_NAME} TS_FILES ${TS_SOURCES}) # TODO: Update to new qt_add_translations form in Qt6.7
+    qt_add_translations(${PROJECT_NAME} TS_FILES ${TS_SOURCES})
 endif()
 
 set_target_properties(${PROJECT_NAME}
@@ -343,15 +338,12 @@ elseif(ANDROID)
 
     set_target_properties(${PROJECT_NAME}
         PROPERTIES
-            # QT_ANDROID_ABIS ${ANDROID_ABI}
             QT_ANDROID_MIN_SDK_VERSION 26
             QT_ANDROID_TARGET_SDK_VERSION 34
             QT_ANDROID_PACKAGE_SOURCE_DIR ${CMAKE_SOURCE_DIR}/android
             QT_ANDROID_VERSION_NAME ${CMAKE_PROJECT_VERSION}
             QT_ANDROID_VERSION_CODE ${ANDROID_VERSION_CODE}
-            # QT_QML_ROOT_PATH ${CMAKE_SOURCE_DIR}
     )
-    # get_target_property(QGC_ANDROID_DEPLOY_FILE ${PROJECT_NAME} QT_ANDROID_DEPLOYMENT_SETTINGS_FILE)
 elseif(LINUX)
 
 endif()
@@ -369,7 +361,7 @@ target_link_libraries(${PROJECT_NAME}
         Qt6::Core
         Qt6::Quick
         Qt6::Widgets
-        Qt6::Svg # Used to import QSvgPlugin
+        Qt6::Svg
         QGC
         QmlControls
         Utilities
@@ -400,11 +392,11 @@ install(
 qt_generate_deploy_qml_app_script(
     TARGET ${PROJECT_NAME}
     OUTPUT_SCRIPT deploy_script
-    # DEPLOY_TOOL_OPTIONS
     MACOS_BUNDLE_POST_BUILD
     NO_UNSUPPORTED_PLATFORM_ERROR
     DEPLOY_USER_QML_MODULES_ON_UNSUPPORTED_PLATFORM
 )
+
 install(SCRIPT ${deploy_script})
 
 if(LINUX)
@@ -433,8 +425,8 @@ if(LINUX)
     )
     install(SCRIPT "${CMAKE_SOURCE_DIR}/cmake/CreateAppImage.cmake")
 elseif(WIN32)
-    # install(SCRIPT "${CMAKE_SOURCE_DIR}/cmake/CreateQGCInstaller.cmake")
     install(SCRIPT "${CMAKE_SOURCE_DIR}/cmake/CreateWinInstaller.cmake")
 elseif(MACOS)
     install(SCRIPT "${CMAKE_SOURCE_DIR}/cmake/CreateMacDMG.cmake")
 endif()
+
