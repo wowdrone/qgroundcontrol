@@ -6,7 +6,12 @@ list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
 #                Custom Build Configuration
 #######################################################
 
-include(CustomOptions)
+# CustomOptions.cmake 파일이 존재하는지 확인하고 포함
+if(EXISTS "${CMAKE_SOURCE_DIR}/custom/cmake/CustomOptions.cmake")
+    include(${CMAKE_SOURCE_DIR}/custom/cmake/CustomOptions)
+else()
+    message(WARNING "CustomOptions.cmake not found. Skipping custom build configuration.")
+endif()
 
 if(IS_DIRECTORY ${CMAKE_SOURCE_DIR}/custom)
     message(STATUS "Enabling custom build")
@@ -19,10 +24,10 @@ endif()
 #                   Project Info
 #######################################################
 
-include(Git)
+include(Git)  # Git 모듈을 포함합니다.
 
-# Ensure QGC_APP_VERSION and QGC_APP_DESCRIPTION are defined
-set(QGC_APP_VERSION "1.0.0")  # Example version
+# QGC_APP_VERSION 및 QGC_APP_DESCRIPTION이 정의되었는지 확인
+set(QGC_APP_VERSION "1.0.0")  # 예시 버전
 set(QGC_APP_DESCRIPTION "QGroundControl Application")
 
 project(QGroundControl
@@ -116,10 +121,14 @@ cmake_print_variables(
 #               Qt6 Configuration
 #######################################################
 
-include(Qt6QGCConfiguration)
+# Qt6QGCConfiguration.cmake 파일이 있는지 확인하고 포함
+if(EXISTS "${CMAKE_SOURCE_DIR}/path/to/Qt6QGCConfiguration.cmake")
+    include(${CMAKE_SOURCE_DIR}/path/to/Qt6QGCConfiguration)
+else()
+    message(WARNING "Qt6QGCConfiguration.cmake not found. Skipping this configuration.")
+endif
 
 set(QT_QML_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/qml" CACHE PATH "Install path for QML" FORCE)
-# set(QML_IMPORT_PATH ${CMAKE_SOURCE_DIR}/qml ${CMAKE_BINARY_DIR}/imports CACHE STRING "Extra QML Import Paths" FORCE)
 add_compile_definitions(QT_DISABLE_DEPRECATED_UP_TO=0x060600)
 
 if(CMAKE_BUILD_TYPE STREQUAL "Release")
@@ -138,18 +147,14 @@ endif()
 if(ANDROID)
     cmake_print_variables(QT_ANDROID_APPLICATION_ARGUMENTS QT_HOST_PATH)
 
-    # QT_USE_TARGET_ANDROID_BUILD_DIR
     list(APPEND QT_ANDROID_MULTI_ABI_FORWARD_VARS QGC_STABLE_BUILD)
     list(APPEND QT_ANDROID_MULTI_ABI_FORWARD_VARS QT_HOST_PATH)
     cmake_print_variables(QT_ANDROID_MULTI_ABI_FORWARD_VARS)
-    # QT_ANDROID_DEPLOY_RELEASE
-    # set(QT_ANDROID_DEPLOYMENT_TYPE ON CACHE BOOL "Deployment Type")
     cmake_dependent_option(QT_ANDROID_SIGN_APK "Enable Signing APK" ON "CMAKE_BUILD_TYPE STREQUAL Release" OFF)
     if(QT_ANDROID_SIGN_APK)
         message(STATUS "Signing APK")
         message(STATUS "QT_ANDROID_KEYSTORE_PATH $ENV{QT_ANDROID_KEYSTORE_PATH}")
         message(STATUS "QT_ANDROID_KEYSTORE_ALIAS $ENV{QT_ANDROID_KEYSTORE_ALIAS}")
-        # QT_ANDROID_KEYSTORE_STORE_PASS, QT_ANDROID_KEYSTORE_KEY_PASS
     endif()
 
     if(NOT Qt6LinguistTools_DIR)
@@ -210,8 +215,6 @@ if(QGC_BUILD_TESTING)
     add_compile_definitions(UNITTEST_BUILD) # TODO: QGC_UNITTEST_BUILD
 endif()
 
-# option(QGC_DISABLE_MAVLINK_INSPECTOR "Disable Mavlink Inspector" OFF) # This removes QtCharts which is GPL licensed
-
 cmake_dependent_option(QGC_DEBUG_QML "Build QGroundControl with QML debugging/profiling support." OFF "CMAKE_BUILD_TYPE STREQUAL Debug" OFF)
 if(QGC_DEBUG_QML)
     message(STATUS "To enable the QML debugger/profiler, run with: '-qmljsdebugger=port:1234'")
@@ -222,7 +225,7 @@ cmake_dependent_option(QGC_NO_SERIAL_LINK "Build QGroundControl without Serial S
 
 if(QGC_DISABLE_APM_MAVLINK)
     add_compile_definitions(NO_ARDUPILOT_DIALECT)
-endif()
+endif
 
 #######################################################
 #                Custom Build Configuration
@@ -234,14 +237,13 @@ endif()
 
 if(QGC_DISABLE_APM_MAVLINK)
     add_compile_definitions(NO_ARDUPILOT_DIALECT)
-endif()
+endif
 
 #######################################################
 #                QGroundControl Resources
 #######################################################
 
 if(NOT QGC_CUSTOM_BUILD)
-    # Custom builds can override the resources
     list(APPEND QGC_RESOURCES
         ${CMAKE_SOURCE_DIR}/qgcimages.qrc
         ${CMAKE_SOURCE_DIR}/qgcresources.qrc
@@ -279,10 +281,9 @@ if(Qt6LinguistTools_FOUND)
     qt_add_translations(${PROJECT_NAME} TS_FILES ${TS_SOURCES}) # TODO: Update to new qt_add_translations form in Qt6.7
 endif()
 
-set_target_properties(${PROJECT_NAME}
-    PROPERTIES
-        QT_RESOURCE_PREFIX "/qgc"
-        OUTPUT_NAME ${QGC_APP_NAME}
+set_target_properties(${PROJECT_NAME} PROPERTIES
+    QT_RESOURCE_PREFIX "/qgc"
+    OUTPUT_NAME ${QGC_APP_NAME}
 )
 
 if(WIN32)
@@ -366,7 +367,7 @@ add_compile_definitions(
 
 add_subdirectory(src)
 
-# Comment out or remove the test directory if not needed
+# test 디렉토리가 필요하지 않은 경우 주석 처리 또는 제거
 # add_subdirectory(test)
 
 target_link_libraries(${PROJECT_NAME}
@@ -380,7 +381,7 @@ target_link_libraries(${PROJECT_NAME}
         Utilities
 )
 if(QGC_BUILD_TESTING)
-    # Ensure the test directory exists if this line is uncommented
+    # test 디렉토리가 필요한 경우 이 줄의 주석을 해제하고 test 디렉토리가 있는지 확인
     # add_subdirectory(test)
     target_link_libraries(${PROJECT_NAME} PRIVATE qgctest)
 endif()
