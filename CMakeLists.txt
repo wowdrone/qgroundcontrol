@@ -221,7 +221,7 @@ if(QGC_DEBUG_QML)
     add_compile_definitions(QT_QML_DEBUG)
 endif()
 
-cmake_dependent_option(QGC_NO_SERIAL_LINK "Build QGroundControl without Serial Support Support." OFF "NOT IOS" ON)
+cmake_dependent_option(QGC_NO_SERIAL_LINK "Build QGroundControl without Serial Support." OFF "NOT IOS" ON)
 
 if(QGC_DISABLE_APM_MAVLINK)
     add_compile_definitions(NO_ARDUPILOT_DIALECT)
