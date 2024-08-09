@@ -21,9 +21,14 @@ if(PYTHON_FOUND)
         ERROR_VARIABLE PYTHON_ERROR
         OUTPUT_STRIP_TRAILING_WHITESPACE
     )
-    message(STATUS "Python script result: ${PYTHON_RESULT}")
-    message(STATUS "Python script output: ${PYTHON_OUTPUT}")
-    message(WARNING "Python script error: ${PYTHON_ERROR}")
+    if(PYTHON_RESULT EQUAL 0)
+        message(STATUS "Python script executed successfully.")
+        message(STATUS "Python script output: ${PYTHON_OUTPUT}")
+    else()
+        message(WARNING "Python script execution failed with error: ${PYTHON_ERROR}")
+    endif()
+else()
+    message(WARNING "Python not found, skipping script execution.")
 endif()
 
 # Our own, custom resources
@@ -33,9 +38,10 @@ list(APPEND CUSTOM_RESOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/qgroundcontrol.qrc
     ${CMAKE_CURRENT_SOURCE_DIR}/custom.qrc
 )
-set(QGC_RESOURCES ${CUSTOM_RESOURCES} PARENT_SCOPE)
+set(QGC_RESOURCES ${CUSTOM_RESOURCES})
 
-set(QML_IMPORT_PATH "${CMAKE_CURRENT_SOURCE_DIR}/res" CACHE STRING "Extra qml import paths" PARENT_SCOPE)
+# Set QML import path
+set(QML_IMPORT_PATH "${CMAKE_CURRENT_SOURCE_DIR}/res" CACHE STRING "Extra qml import paths")
 
 qt_add_library(CustomPlugin STATIC
     src/CustomPlugin.cc
