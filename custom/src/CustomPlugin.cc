@@ -9,22 +9,15 @@
  *   @author Gus Grubba <gus@auterion.com>
  */
 
-#include <QtQml>
-#include <QQmlEngine>
-#include <QDateTime>
-#include "QGCSettings.h"
-#include "MAVLinkLogManager.h"
-
 #include "CustomPlugin.h"
-
-#include "MultiVehicleManager.h"
 #include "QGCApplication.h"
-#include "SettingsManager.h"
-#include "AppMessages.h"
 #include "QmlComponentInfo.h"
 #include "QGCPalette.h"
+#include "AppSettings.h"
+#include "BrandImageSettings.h"
+#include <QtQml/QQmlApplicationEngine>
 
-QGC_LOGGING_CATEGORY(CustomLog, "CustomLog")
+QGC_LOGGING_CATEGORY(CustomLog, "gcs.custom.customplugin")
 
 CustomFlyViewOptions::CustomFlyViewOptions(CustomOptions* options, QObject* parent)
     : QGCFlyViewOptions(options, parent)
@@ -106,24 +99,6 @@ void CustomPlugin::_addSettingsEntry(const QString& title, const char* qmlFile, 
                 QUrl::fromUserInput(qmlFile),
                 iconFile == nullptr ? QUrl() : QUrl::fromUserInput(iconFile),
                 this)));
-}
-
-//-----------------------------------------------------------------------------
-QVariantList&
-CustomPlugin::settingsPages()
-{
-    if(_customSettingsList.isEmpty()) {
-        _addSettingsEntry(tr("General"),     "qrc:/qml/GeneralSettings.qml",     "qrc:/res/gear-white.svg");
-        _addSettingsEntry(tr("Comm Links"),  "qrc:/qml/LinkSettings.qml",        "qrc:/res/waves.svg");
-        _addSettingsEntry(tr("Offline Maps"),"qrc:/qml/OfflineMap.qml",          "qrc:/res/waves.svg");
-        _addSettingsEntry(tr("MAVLink"),     "qrc:/qml/MavlinkSettings.qml",     "qrc:/res/waves.svg");
-        _addSettingsEntry(tr("Console"),     "qrc:/qml/QGroundControl/Controls/AppMessages.qml");
-#if defined(QT_DEBUG)
-        //-- These are always present on Debug builds
-        _addSettingsEntry(tr("Mock Link"),   "qrc:/qml/MockLink.qml");
-#endif
-    }
-    return _customSettingsList;
 }
 
 QGCOptions* CustomPlugin::options()
