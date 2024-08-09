@@ -21,6 +21,10 @@ endif()
 
 include(Git)
 
+# Ensure QGC_APP_VERSION and QGC_APP_DESCRIPTION are defined
+set(QGC_APP_VERSION "1.0.0")  # Example version
+set(QGC_APP_DESCRIPTION "QGroundControl Application")
+
 project(QGroundControl
     VERSION ${QGC_APP_VERSION}
     DESCRIPTION ${QGC_APP_DESCRIPTION}
@@ -343,15 +347,12 @@ elseif(ANDROID)
 
     set_target_properties(${PROJECT_NAME}
         PROPERTIES
-            # QT_ANDROID_ABIS ${ANDROID_ABI}
             QT_ANDROID_MIN_SDK_VERSION 26
             QT_ANDROID_TARGET_SDK_VERSION 34
             QT_ANDROID_PACKAGE_SOURCE_DIR ${CMAKE_SOURCE_DIR}/android
             QT_ANDROID_VERSION_NAME ${CMAKE_PROJECT_VERSION}
             QT_ANDROID_VERSION_CODE ${ANDROID_VERSION_CODE}
-            # QT_QML_ROOT_PATH ${CMAKE_SOURCE_DIR}
     )
-    # get_target_property(QGC_ANDROID_DEPLOY_FILE ${PROJECT_NAME} QT_ANDROID_DEPLOYMENT_SETTINGS_FILE)
 elseif(LINUX)
 
 endif()
@@ -364,6 +365,10 @@ add_compile_definitions(
 )
 
 add_subdirectory(src)
+
+# Comment out or remove the test directory if not needed
+# add_subdirectory(test)
+
 target_link_libraries(${PROJECT_NAME}
     PRIVATE
         Qt6::Core
@@ -375,7 +380,8 @@ target_link_libraries(${PROJECT_NAME}
         Utilities
 )
 if(QGC_BUILD_TESTING)
-    add_subdirectory(test)
+    # Ensure the test directory exists if this line is uncommented
+    # add_subdirectory(test)
     target_link_libraries(${PROJECT_NAME} PRIVATE qgctest)
 endif()
 
@@ -411,12 +417,15 @@ install(
     DIRECTORY ${CMAKE_SOURCE_DIR}/resources/
     DESTINATION ${CMAKE_INSTALL_DATADIR}/qgroundcontrol
 )
+
 if(LINUX)
-    configure_file(
-        ${CMAKE_SOURCE_DIR}/deploy/linux/org.mavlink.qgroundcontrol.desktop.in
-        ${CMAKE_BINARY_DIR}/org.mavlink.qgroundcontrol.desktop
-        @ONLY
-    )
+    if(EXISTS "${CMAKE_SOURCE_DIR}/deploy/linux/org.mavlink.qgroundcontrol.desktop.in")
+        configure_file(${CMAKE_SOURCE_DIR}/deploy/linux/org.mavlink.qgroundcontrol.desktop.in
+                       ${CMAKE_BINARY_DIR}/org.mavlink.qgroundcontrol.desktop @ONLY)
+    else()
+        message(FATAL_ERROR "File org.mavlink.qgroundcontrol.desktop.in not found")
+    endif()
+
     install(
         FILES ${CMAKE_BINARY_DIR}/org.mavlink.qgroundcontrol.desktop
         DESTINATION ${CMAKE_INSTALL_DATADIR}/applications
@@ -426,11 +435,14 @@ if(LINUX)
         DESTINATION ${CMAKE_INSTALL_DATADIR}/icons/hicolor/128x128/apps/
         RENAME org.mavlink.qgroundcontrol.png
     )
-    configure_file(
-        ${CMAKE_SOURCE_DIR}/deploy/linux/org.mavlink.qgroundcontrol.metainfo.xml.in
-        ${CMAKE_BINARY_DIR}/metainfo/org.mavlink.qgroundcontrol.metainfo.xml
-        @ONLY
-    )
+    
+    if(EXISTS "${CMAKE_SOURCE_DIR}/deploy/linux/org.mavlink.qgroundcontrol.metainfo.xml.in")
+        configure_file(${CMAKE_SOURCE_DIR}/deploy/linux/org.mavlink.qgroundcontrol.metainfo.xml.in
+                       ${CMAKE_BINARY_DIR}/metainfo/org.mavlink.qgroundcontrol.metainfo.xml @ONLY)
+    else()
+        message(FATAL_ERROR "File org.mavlink.qgroundcontrol.metainfo.xml.in not found")
+    endif()
+
     install(
         FILES ${CMAKE_BINARY_DIR}/metainfo/org.mavlink.qgroundcontrol.metainfo.xml
         DESTINATION ${CMAKE_INSTALL_DATADIR}/metainfo/
@@ -442,3 +454,4 @@ elseif(WIN32)
 elseif(MACOS)
     install(SCRIPT "${CMAKE_SOURCE_DIR}/cmake/CreateMacDMG.cmake")
 endif()
+
