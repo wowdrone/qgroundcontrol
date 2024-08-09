@@ -126,7 +126,7 @@ if(EXISTS "${CMAKE_SOURCE_DIR}/path/to/Qt6QGCConfiguration.cmake")
     include(${CMAKE_SOURCE_DIR}/path/to/Qt6QGCConfiguration)
 else()
     message(WARNING "Qt6QGCConfiguration.cmake not found. Skipping this configuration.")
-endif
+endif()
 
 set(QT_QML_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/qml" CACHE PATH "Install path for QML" FORCE)
 add_compile_definitions(QT_DISABLE_DEPRECATED_UP_TO=0x060600)
@@ -225,7 +225,7 @@ cmake_dependent_option(QGC_NO_SERIAL_LINK "Build QGroundControl without Serial S
 
 if(QGC_DISABLE_APM_MAVLINK)
     add_compile_definitions(NO_ARDUPILOT_DIALECT)
-endif
+endif()
 
 #######################################################
 #                Custom Build Configuration
