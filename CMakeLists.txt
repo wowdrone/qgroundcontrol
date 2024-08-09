@@ -122,8 +122,8 @@ cmake_print_variables(
 #######################################################
 
 # Qt6QGCConfiguration.cmake 파일이 있는지 확인하고 포함
-if(EXISTS "${CMAKE_SOURCE_DIR}/path/to/Qt6QGCConfiguration.cmake")
-    include(${CMAKE_SOURCE_DIR}/path/to/Qt6QGCConfiguration)
+if(EXISTS "${CMAKE_SOURCE_DIR}/cmake/Qt6QGCConfiguration.cmake")
+    include(${CMAKE_SOURCE_DIR}/cmake/Qt6QGCConfiguration)
 else()
     message(WARNING "Qt6QGCConfiguration.cmake not found. Skipping this configuration.")
 endif()
