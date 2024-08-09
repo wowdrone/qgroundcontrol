@@ -237,8 +237,7 @@ endif()
 
 if(QGC_DISABLE_APM_MAVLINK)
     add_compile_definitions(NO_ARDUPILOT_DIALECT)
-endif
-
+endif()
 #######################################################
 #                QGroundControl Resources
 #######################################################
