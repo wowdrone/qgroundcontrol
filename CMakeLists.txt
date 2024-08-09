@@ -254,7 +254,7 @@ list(APPEND QGC_RESOURCES
     ${CMAKE_SOURCE_DIR}/resources/InstrumentValueIcons/InstrumentValueIcons.qrc
     ${CMAKE_SOURCE_DIR}/src/FirmwarePlugin/APM/APMResources.qrc
     ${CMAKE_SOURCE_DIR}/src/FirmwarePlugin/PX4/PX4Resources.qrc
-)
+	)
 
 if(CONFIG_UTM_ADAPTER)
     list(APPEND QGC_RESOURCES ${CMAKE_SOURCE_DIR}/src/UTMSP/utmsp.qrc)
@@ -273,7 +273,7 @@ endif()
 qt_add_executable(${PROJECT_NAME}
     src/main.cc
     ${QGC_RESOURCES}
-)
+	)
 
 if(Qt6LinguistTools_FOUND)
     file(GLOB TS_SOURCES RELATIVE ${CMAKE_SOURCE_DIR} ${CMAKE_SOURCE_DIR}/translations/qgc_*.ts)
@@ -283,7 +283,7 @@ endif()
 set_target_properties(${PROJECT_NAME} PROPERTIES
     QT_RESOURCE_PREFIX "/qgc"
     OUTPUT_NAME ${QGC_APP_NAME}
-)
+	)	
 
 if(WIN32)
     set(app_icon_resource_windows "${CMAKE_SOURCE_DIR}/deploy/windows/QGroundControl.rc")
@@ -352,7 +352,7 @@ elseif(ANDROID)
             QT_ANDROID_PACKAGE_SOURCE_DIR ${CMAKE_SOURCE_DIR}/android
             QT_ANDROID_VERSION_NAME ${CMAKE_PROJECT_VERSION}
             QT_ANDROID_VERSION_CODE ${ANDROID_VERSION_CODE}
-    )
+    	)
 elseif(LINUX)
 
 endif()
@@ -362,7 +362,7 @@ add_compile_definitions(
     QGC_ORG_NAME="${QGC_ORG_NAME}"
     QGC_ORG_DOMAIN="${QGC_ORG_DOMAIN}"
     QGC_APP_VERSION_STR="${QGC_APP_VERSION_STR}"
-)
+	)
 
 add_subdirectory(src)
 
@@ -378,7 +378,7 @@ target_link_libraries(${PROJECT_NAME}
         QGC
         QmlControls
         Utilities
-)
+	)
 if(QGC_BUILD_TESTING)
     # test 디렉토리가 필요한 경우 이 줄의 주석을 해제하고 test 디렉토리가 있는지 확인
     # add_subdirectory(test)
@@ -393,7 +393,7 @@ qt_import_plugins(${PROJECT_NAME}
     INCLUDE Qt6::QSvgPlugin
     EXCLUDE_BY_TYPE geoservices
     INCLUDE_BY_TYPE sqldrivers Qt6::QSQLiteDriverPlugin
-)
+	)
 
 install(
     TARGETS ${PROJECT_NAME}
@@ -401,7 +401,7 @@ install(
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
     ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
     BUNDLE  DESTINATION .
-)
+	)
 
 qt_generate_deploy_qml_app_script(
     TARGET ${PROJECT_NAME}
@@ -410,13 +410,13 @@ qt_generate_deploy_qml_app_script(
     MACOS_BUNDLE_POST_BUILD
     NO_UNSUPPORTED_PLATFORM_ERROR
     DEPLOY_USER_QML_MODULES_ON_UNSUPPORTED_PLATFORM
-)
+	)
 install(SCRIPT ${deploy_script})
 
 install(
     DIRECTORY ${CMAKE_SOURCE_DIR}/resources/
     DESTINATION ${CMAKE_INSTALL_DATADIR}/qgroundcontrol
-)
+	)
 
 if(LINUX)
     if(EXISTS "${CMAKE_SOURCE_DIR}/deploy/linux/org.mavlink.qgroundcontrol.desktop.in")
@@ -454,4 +454,3 @@ elseif(WIN32)
 elseif(MACOS)
     install(SCRIPT "${CMAKE_SOURCE_DIR}/cmake/CreateMacDMG.cmake")
 endif()
-
