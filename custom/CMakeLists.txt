@@ -61,14 +61,14 @@ set(QML_IMPORT_PATH "${CMAKE_CURRENT_SOURCE_DIR}/res" CACHE STRING "Extra qml im
 
 # Add library for the custom plugin
 qt_add_library(CustomPlugin STATIC
-    Linker/qgroundcontrol/src/CustomPlugin.cc
-    Linker/qgroundcontrol/src/CustomPlugin.h
-    Linker/qgroundcontrol/src/AutoPilotPlugin/CustomAutoPilotPlugin.cc
-    Linker/qgroundcontrol/src/AutoPilotPlugin/CustomAutoPilotPlugin.h
-    Linker/qgroundcontrol/src/FirmwarePlugin/CustomFirmwarePlugin.cc
-    Linker/qgroundcontrol/src/FirmwarePlugin/CustomFirmwarePlugin.h
-    Linker/qgroundcontrol/src/FirmwarePlugin/CustomFirmwarePluginFactory.cc
-    Linker/qgroundcontrol/src/FirmwarePlugin/CustomFirmwarePluginFactory.h
+    src/CustomPlugin.cc
+    src/CustomPlugin.h
+    src/AutoPilotPlugin/CustomAutoPilotPlugin.cc
+    src/AutoPilotPlugin/CustomAutoPilotPlugin.h
+    src/FirmwarePlugin/CustomFirmwarePlugin.cc
+    src/FirmwarePlugin/CustomFirmwarePlugin.h
+    src/FirmwarePlugin/CustomFirmwarePluginFactory.cc
+    src/FirmwarePlugin/CustomFirmwarePluginFactory.h
 )
 
 # Link necessary libraries
@@ -91,17 +91,16 @@ target_link_libraries(CustomPlugin
 target_include_directories(CustomPlugin
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/src
-        ${CMAKE_CURRENT_SOURCE_DIR}/Linker/qgroundcontrol/src/AutoPilotPlugins/
-        ${CMAKE_CURRENT_SOURCE_DIR}/Linker/qgroundcontrol/src/FirmwarePlugin
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/AutoPilotPlugin
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/FirmwarePlugin
         ${CMAKE_SOURCE_DIR}/libs
-        ${CMAKE_SOURCE_DIR}/Linker/qgroundcontrol/src/
-        ${CMAKE_SOURCE_DIR}/Linker/qgroundcontrol/src/AutoPilotPlugins/PX4
-        ${CMAKE_SOURCE_DIR}/Linker/qgroundcontrol/src/FirmwarePlugin
-        ${CMAKE_SOURCE_DIR}/Linker/qgroundcontrol/src/Vehicle
-        ${CMAKE_SOURCE_DIR}/Linker/qgroundcontrol/src/FactSystem
-        ${CMAKE_SOURCE_DIR}/Linker/qgroundcontrol/src/Settings
-        ${CMAKE_SOURCE_DIR}/Linker/qgroundcontrol/src/QtLocationPlugin
-        ${CMAKE_SOURCE_DIR}/Linker/qgroundcontrol/src/QmlControls
-        ${CMAKE_SOURCE_DIR}/Linker/qgroundcontrol/src/MissionManager
+        ${CMAKE_SOURCE_DIR}/src
+        ${CMAKE_SOURCE_DIR}/src/AutoPilotPlugins/PX4
+        ${CMAKE_SOURCE_DIR}/src/FirmwarePlugin
+        ${CMAKE_SOURCE_DIR}/src/Vehicle
+        ${CMAKE_SOURCE_DIR}/src/FactSystem
+        ${CMAKE_SOURCE_DIR}/src/Settings
+        ${CMAKE_SOURCE_DIR}/src/QtLocationPlugin
+        ${CMAKE_SOURCE_DIR}/src/QmlControls
+        ${CMAKE_SOURCE_DIR}/src/MissionManager
 )
-
