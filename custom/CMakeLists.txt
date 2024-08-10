@@ -61,14 +61,14 @@ set(QML_IMPORT_PATH "${CMAKE_CURRENT_SOURCE_DIR}/res" CACHE STRING "Extra qml im
 
 # Add library for the custom plugin
 qt_add_library(CustomPlugin STATIC
-    src/CustomPlugin.cc
-    src/CustomPlugin.h
-    src/AutoPilotPlugin/CustomAutoPilotPlugin.cc
-    src/AutoPilotPlugin/CustomAutoPilotPlugin.h
-    src/FirmwarePlugin/CustomFirmwarePlugin.cc
-    src/FirmwarePlugin/CustomFirmwarePlugin.h
-    src/FirmwarePlugin/CustomFirmwarePluginFactory.cc
-    src/FirmwarePlugin/CustomFirmwarePluginFactory.h
+    /Linker/qgroundcontrol/custom/src/CustomPlugin.cc
+    /Linker/qgroundcontrol/custom/src/CustomPlugin.h
+    /Linker/qgroundcontrol/custom/src/AutoPilotPlugin/CustomAutoPilotPlugin.cc
+    /Linker/qgroundcontrol/custom/src/AutoPilotPlugin/CustomAutoPilotPlugin.h
+    /Linker/qgroundcontrol/custom/src/FirmwarePlugin/CustomFirmwarePlugin.cc
+    /Linker/qgroundcontrol/custom/src/FirmwarePlugin/CustomFirmwarePlugin.h
+    /Linker/qgroundcontrol/custom/src/FirmwarePlugin/CustomFirmwarePluginFactory.cc
+    /Linker/qgroundcontrol/custom/src/FirmwarePlugin/CustomFirmwarePluginFactory.h
 )
 
 # Link necessary libraries
