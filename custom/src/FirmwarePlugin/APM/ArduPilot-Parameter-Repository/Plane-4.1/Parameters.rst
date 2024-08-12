@@ -2455,6 +2455,11 @@ Flight mode specific options
 | +-----+-------------------------------------------------------------------------------------------------------------+ |
 | | 7   | EnableDefaultAirspeed for takeoff                                                                           | |
 | +-----+-------------------------------------------------------------------------------------------------------------+ |
+<<<<<<< HEAD
+=======
+| | 11  | Disable suppression of fixed wing rate gains in ground mode                                                 | |
+| +-----+-------------------------------------------------------------------------------------------------------------+ |
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 |                                                                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------+
 
@@ -10395,6 +10400,11 @@ Board specific option flags
 | +-----+-----------------------------------+ |
 | | 2   | Enable set of internal parameters | |
 | +-----+-----------------------------------+ |
+<<<<<<< HEAD
+=======
+| | 3   | Enable Debug Pins                 | |
+| +-----+-----------------------------------+ |
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 |                                             |
 +---------------------------------------------+
 
@@ -12264,6 +12274,11 @@ Enabling this option starts selected protocol that will use this virtual driver
 |                | +-------+------------------+ |
 |                | | 9     | PacketDigitalCAN | |
 |                | +-------+------------------+ |
+<<<<<<< HEAD
+=======
+|                | | 11    | Benewake         | |
+|                | +-------+------------------+ |
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 |                |                              |
 +----------------+------------------------------+
 
@@ -12514,6 +12529,35 @@ Maximum transmit rate for servo outputs
 
 
 
+<<<<<<< HEAD
+=======
+.. _CAN_D1_UC_OPTION:
+
+CAN\_D1\_UC\_OPTION: UAVCAN options
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Option flags
+
+
++----------------------------------+
+| Bitmask                          |
++==================================+
+| +-----+------------------------+ |
+| | Bit | Meaning                | |
+| +=====+========================+ |
+| | 0   | ClearDNADatabase       | |
+| +-----+------------------------+ |
+| | 1   | IgnoreDNANodeConflicts | |
+| +-----+------------------------+ |
+|                                  |
++----------------------------------+
+
+
+
+
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 
 .. _parameters_CAN_D2_:
 
@@ -12551,6 +12595,11 @@ Enabling this option starts selected protocol that will use this virtual driver
 |                | +-------+------------------+ |
 |                | | 9     | PacketDigitalCAN | |
 |                | +-------+------------------+ |
+<<<<<<< HEAD
+=======
+|                | | 11    | Benewake         | |
+|                | +-------+------------------+ |
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 |                |                              |
 +----------------+------------------------------+
 
@@ -12801,6 +12850,35 @@ Maximum transmit rate for servo outputs
 
 
 
+<<<<<<< HEAD
+=======
+.. _CAN_D2_UC_OPTION:
+
+CAN\_D2\_UC\_OPTION: UAVCAN options
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Option flags
+
+
++----------------------------------+
+| Bitmask                          |
++==================================+
+| +-----+------------------------+ |
+| | Bit | Meaning                | |
+| +=====+========================+ |
+| | 0   | ClearDNADatabase       | |
+| +-----+------------------------+ |
+| | 1   | IgnoreDNANodeConflicts | |
+| +-----+------------------------+ |
+|                                  |
++----------------------------------+
+
+
+
+
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 
 .. _parameters_CAN_D3_:
 
@@ -12838,6 +12916,11 @@ Enabling this option starts selected protocol that will use this virtual driver
 |                | +-------+------------------+ |
 |                | | 9     | PacketDigitalCAN | |
 |                | +-------+------------------+ |
+<<<<<<< HEAD
+=======
+|                | | 11    | Benewake         | |
+|                | +-------+------------------+ |
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 |                |                              |
 +----------------+------------------------------+
 
@@ -13088,6 +13171,35 @@ Maximum transmit rate for servo outputs
 
 
 
+<<<<<<< HEAD
+=======
+.. _CAN_D3_UC_OPTION:
+
+CAN\_D3\_UC\_OPTION: UAVCAN options
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Option flags
+
+
++----------------------------------+
+| Bitmask                          |
++==================================+
+| +-----+------------------------+ |
+| | Bit | Meaning                | |
+| +=====+========================+ |
+| | 0   | ClearDNADatabase       | |
+| +-----+------------------------+ |
+| | 1   | IgnoreDNANodeConflicts | |
+| +-----+------------------------+ |
+|                                  |
++----------------------------------+
+
+
+
+
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 
 .. _parameters_CAN_P1_:
 
@@ -18034,6 +18146,28 @@ This parameter sets the size of the dead zone that is applied to negative baro h
 
 
 
+<<<<<<< HEAD
+=======
+.. _EK3_PRIMARY:
+
+EK3\_PRIMARY: Primary core number
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+The core number \(index in IMU mask\) that will be used as the primary EKF core on startup\. While disarmed the EKF will force the use of this core\. A value of 0 corresponds to the first IMU in EK3\_IMU\_MASK\.
+
+
++-----------+-------+
+| Increment | Range |
++===========+=======+
+| 1         | 0 - 2 |
++-----------+-------+
+
+
+
+
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 
 .. _parameters_EK3_SRC:
 
@@ -48010,6 +48144,11 @@ RC input options
 | +-----+--------------------------------------------------------------------+ |
 | | 9   | Suppress CRSF mode/rate message for ELRS systems                   | |
 | +-----+--------------------------------------------------------------------+ |
+<<<<<<< HEAD
+=======
+| | 10  | Enable RC Protocol re-detection                                    | |
+| +-----+--------------------------------------------------------------------+ |
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 |                                                                              |
 +------------------------------------------------------------------------------+
 
@@ -48288,6 +48427,13 @@ Function assigned to this RC channel
 | +-------+-----------------------------------+ |
 | | 106   | Disable Airspeed Use              | |
 | +-------+-----------------------------------+ |
+<<<<<<< HEAD
+=======
+| | 107   | EnableFixedWingAutotune           | |
+| +-------+-----------------------------------+ |
+| | 108   | ModeQRTL                          | |
+| +-------+-----------------------------------+ |
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 | | 208   | Flap                              | |
 | +-------+-----------------------------------+ |
 | | 209   | Forward Throttle                  | |
@@ -48538,6 +48684,13 @@ Function assigned to this RC channel
 | +-------+-----------------------------------+ |
 | | 106   | Disable Airspeed Use              | |
 | +-------+-----------------------------------+ |
+<<<<<<< HEAD
+=======
+| | 107   | EnableFixedWingAutotune           | |
+| +-------+-----------------------------------+ |
+| | 108   | ModeQRTL                          | |
+| +-------+-----------------------------------+ |
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 | | 208   | Flap                              | |
 | +-------+-----------------------------------+ |
 | | 209   | Forward Throttle                  | |
@@ -48788,6 +48941,13 @@ Function assigned to this RC channel
 | +-------+-----------------------------------+ |
 | | 106   | Disable Airspeed Use              | |
 | +-------+-----------------------------------+ |
+<<<<<<< HEAD
+=======
+| | 107   | EnableFixedWingAutotune           | |
+| +-------+-----------------------------------+ |
+| | 108   | ModeQRTL                          | |
+| +-------+-----------------------------------+ |
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 | | 208   | Flap                              | |
 | +-------+-----------------------------------+ |
 | | 209   | Forward Throttle                  | |
@@ -49038,6 +49198,13 @@ Function assigned to this RC channel
 | +-------+-----------------------------------+ |
 | | 106   | Disable Airspeed Use              | |
 | +-------+-----------------------------------+ |
+<<<<<<< HEAD
+=======
+| | 107   | EnableFixedWingAutotune           | |
+| +-------+-----------------------------------+ |
+| | 108   | ModeQRTL                          | |
+| +-------+-----------------------------------+ |
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 | | 208   | Flap                              | |
 | +-------+-----------------------------------+ |
 | | 209   | Forward Throttle                  | |
@@ -49288,6 +49455,13 @@ Function assigned to this RC channel
 | +-------+-----------------------------------+ |
 | | 106   | Disable Airspeed Use              | |
 | +-------+-----------------------------------+ |
+<<<<<<< HEAD
+=======
+| | 107   | EnableFixedWingAutotune           | |
+| +-------+-----------------------------------+ |
+| | 108   | ModeQRTL                          | |
+| +-------+-----------------------------------+ |
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 | | 208   | Flap                              | |
 | +-------+-----------------------------------+ |
 | | 209   | Forward Throttle                  | |
@@ -49538,6 +49712,13 @@ Function assigned to this RC channel
 | +-------+-----------------------------------+ |
 | | 106   | Disable Airspeed Use              | |
 | +-------+-----------------------------------+ |
+<<<<<<< HEAD
+=======
+| | 107   | EnableFixedWingAutotune           | |
+| +-------+-----------------------------------+ |
+| | 108   | ModeQRTL                          | |
+| +-------+-----------------------------------+ |
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 | | 208   | Flap                              | |
 | +-------+-----------------------------------+ |
 | | 209   | Forward Throttle                  | |
@@ -49788,6 +49969,13 @@ Function assigned to this RC channel
 | +-------+-----------------------------------+ |
 | | 106   | Disable Airspeed Use              | |
 | +-------+-----------------------------------+ |
+<<<<<<< HEAD
+=======
+| | 107   | EnableFixedWingAutotune           | |
+| +-------+-----------------------------------+ |
+| | 108   | ModeQRTL                          | |
+| +-------+-----------------------------------+ |
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 | | 208   | Flap                              | |
 | +-------+-----------------------------------+ |
 | | 209   | Forward Throttle                  | |
@@ -50038,6 +50226,13 @@ Function assigned to this RC channel
 | +-------+-----------------------------------+ |
 | | 106   | Disable Airspeed Use              | |
 | +-------+-----------------------------------+ |
+<<<<<<< HEAD
+=======
+| | 107   | EnableFixedWingAutotune           | |
+| +-------+-----------------------------------+ |
+| | 108   | ModeQRTL                          | |
+| +-------+-----------------------------------+ |
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 | | 208   | Flap                              | |
 | +-------+-----------------------------------+ |
 | | 209   | Forward Throttle                  | |
@@ -50288,6 +50483,13 @@ Function assigned to this RC channel
 | +-------+-----------------------------------+ |
 | | 106   | Disable Airspeed Use              | |
 | +-------+-----------------------------------+ |
+<<<<<<< HEAD
+=======
+| | 107   | EnableFixedWingAutotune           | |
+| +-------+-----------------------------------+ |
+| | 108   | ModeQRTL                          | |
+| +-------+-----------------------------------+ |
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 | | 208   | Flap                              | |
 | +-------+-----------------------------------+ |
 | | 209   | Forward Throttle                  | |
@@ -50538,6 +50740,13 @@ Function assigned to this RC channel
 | +-------+-----------------------------------+ |
 | | 106   | Disable Airspeed Use              | |
 | +-------+-----------------------------------+ |
+<<<<<<< HEAD
+=======
+| | 107   | EnableFixedWingAutotune           | |
+| +-------+-----------------------------------+ |
+| | 108   | ModeQRTL                          | |
+| +-------+-----------------------------------+ |
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 | | 208   | Flap                              | |
 | +-------+-----------------------------------+ |
 | | 209   | Forward Throttle                  | |
@@ -50788,6 +50997,13 @@ Function assigned to this RC channel
 | +-------+-----------------------------------+ |
 | | 106   | Disable Airspeed Use              | |
 | +-------+-----------------------------------+ |
+<<<<<<< HEAD
+=======
+| | 107   | EnableFixedWingAutotune           | |
+| +-------+-----------------------------------+ |
+| | 108   | ModeQRTL                          | |
+| +-------+-----------------------------------+ |
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 | | 208   | Flap                              | |
 | +-------+-----------------------------------+ |
 | | 209   | Forward Throttle                  | |
@@ -51038,6 +51254,13 @@ Function assigned to this RC channel
 | +-------+-----------------------------------+ |
 | | 106   | Disable Airspeed Use              | |
 | +-------+-----------------------------------+ |
+<<<<<<< HEAD
+=======
+| | 107   | EnableFixedWingAutotune           | |
+| +-------+-----------------------------------+ |
+| | 108   | ModeQRTL                          | |
+| +-------+-----------------------------------+ |
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 | | 208   | Flap                              | |
 | +-------+-----------------------------------+ |
 | | 209   | Forward Throttle                  | |
@@ -51288,6 +51511,13 @@ Function assigned to this RC channel
 | +-------+-----------------------------------+ |
 | | 106   | Disable Airspeed Use              | |
 | +-------+-----------------------------------+ |
+<<<<<<< HEAD
+=======
+| | 107   | EnableFixedWingAutotune           | |
+| +-------+-----------------------------------+ |
+| | 108   | ModeQRTL                          | |
+| +-------+-----------------------------------+ |
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 | | 208   | Flap                              | |
 | +-------+-----------------------------------+ |
 | | 209   | Forward Throttle                  | |
@@ -51538,6 +51768,13 @@ Function assigned to this RC channel
 | +-------+-----------------------------------+ |
 | | 106   | Disable Airspeed Use              | |
 | +-------+-----------------------------------+ |
+<<<<<<< HEAD
+=======
+| | 107   | EnableFixedWingAutotune           | |
+| +-------+-----------------------------------+ |
+| | 108   | ModeQRTL                          | |
+| +-------+-----------------------------------+ |
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 | | 208   | Flap                              | |
 | +-------+-----------------------------------+ |
 | | 209   | Forward Throttle                  | |
@@ -51788,6 +52025,13 @@ Function assigned to this RC channel
 | +-------+-----------------------------------+ |
 | | 106   | Disable Airspeed Use              | |
 | +-------+-----------------------------------+ |
+<<<<<<< HEAD
+=======
+| | 107   | EnableFixedWingAutotune           | |
+| +-------+-----------------------------------+ |
+| | 108   | ModeQRTL                          | |
+| +-------+-----------------------------------+ |
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 | | 208   | Flap                              | |
 | +-------+-----------------------------------+ |
 | | 209   | Forward Throttle                  | |
@@ -52038,6 +52282,13 @@ Function assigned to this RC channel
 | +-------+-----------------------------------+ |
 | | 106   | Disable Airspeed Use              | |
 | +-------+-----------------------------------+ |
+<<<<<<< HEAD
+=======
+| | 107   | EnableFixedWingAutotune           | |
+| +-------+-----------------------------------+ |
+| | 108   | ModeQRTL                          | |
+| +-------+-----------------------------------+ |
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 | | 208   | Flap                              | |
 | +-------+-----------------------------------+ |
 | | 209   | Forward Throttle                  | |
@@ -52747,6 +52998,11 @@ What type of rangefinder device that is connected
 | +-------+------------------------+ |
 | | 33    | USD1_CAN               | |
 | +-------+------------------------+ |
+<<<<<<< HEAD
+=======
+| | 34    | Benewake_CAN           | |
+| +-------+------------------------+ |
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 | | 100   | SITL                   | |
 | +-------+------------------------+ |
 |                                    |
@@ -53239,6 +53495,47 @@ Desired baud rate
 
 
 
+<<<<<<< HEAD
+=======
+.. _RNGFND1_RECV_ID:
+
+RNGFND1\_RECV\_ID: CAN receive ID
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+The receive ID of the CAN frames\. A value of zero means all IDs are accepted\.
+
+
++-----------+
+| Range     |
++===========+
+| 0 - 65535 |
++-----------+
+
+
+
+
+.. _RNGFND1_SNR_MIN:
+
+RNGFND1\_SNR\_MIN: Minimum signal strength
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum signal strength \(SNR\) to accept distance
+
+
++-----------+
+| Range     |
++===========+
+| 0 - 65535 |
++-----------+
+
+
+
+
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 
 .. _parameters_RNGFND2_:
 
@@ -53327,6 +53624,11 @@ What type of rangefinder device that is connected
 | +-------+------------------------+ |
 | | 33    | USD1_CAN               | |
 | +-------+------------------------+ |
+<<<<<<< HEAD
+=======
+| | 34    | Benewake_CAN           | |
+| +-------+------------------------+ |
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 | | 100   | SITL                   | |
 | +-------+------------------------+ |
 |                                    |
@@ -53819,6 +54121,47 @@ Desired baud rate
 
 
 
+<<<<<<< HEAD
+=======
+.. _RNGFND2_RECV_ID:
+
+RNGFND2\_RECV\_ID: CAN receive ID
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+The receive ID of the CAN frames\. A value of zero means all IDs are accepted\.
+
+
++-----------+
+| Range     |
++===========+
+| 0 - 65535 |
++-----------+
+
+
+
+
+.. _RNGFND2_SNR_MIN:
+
+RNGFND2\_SNR\_MIN: Minimum signal strength
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum signal strength \(SNR\) to accept distance
+
+
++-----------+
+| Range     |
++===========+
+| 0 - 65535 |
++-----------+
+
+
+
+
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 
 .. _parameters_RNGFND3_:
 
@@ -53907,6 +54250,11 @@ What type of rangefinder device that is connected
 | +-------+------------------------+ |
 | | 33    | USD1_CAN               | |
 | +-------+------------------------+ |
+<<<<<<< HEAD
+=======
+| | 34    | Benewake_CAN           | |
+| +-------+------------------------+ |
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 | | 100   | SITL                   | |
 | +-------+------------------------+ |
 |                                    |
@@ -54399,6 +54747,47 @@ Desired baud rate
 
 
 
+<<<<<<< HEAD
+=======
+.. _RNGFND3_RECV_ID:
+
+RNGFND3\_RECV\_ID: CAN receive ID
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+The receive ID of the CAN frames\. A value of zero means all IDs are accepted\.
+
+
++-----------+
+| Range     |
++===========+
+| 0 - 65535 |
++-----------+
+
+
+
+
+.. _RNGFND3_SNR_MIN:
+
+RNGFND3\_SNR\_MIN: Minimum signal strength
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum signal strength \(SNR\) to accept distance
+
+
++-----------+
+| Range     |
++===========+
+| 0 - 65535 |
++-----------+
+
+
+
+
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 
 .. _parameters_RNGFND4_:
 
@@ -54487,6 +54876,11 @@ What type of rangefinder device that is connected
 | +-------+------------------------+ |
 | | 33    | USD1_CAN               | |
 | +-------+------------------------+ |
+<<<<<<< HEAD
+=======
+| | 34    | Benewake_CAN           | |
+| +-------+------------------------+ |
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 | | 100   | SITL                   | |
 | +-------+------------------------+ |
 |                                    |
@@ -54979,6 +55373,47 @@ Desired baud rate
 
 
 
+<<<<<<< HEAD
+=======
+.. _RNGFND4_RECV_ID:
+
+RNGFND4\_RECV\_ID: CAN receive ID
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+The receive ID of the CAN frames\. A value of zero means all IDs are accepted\.
+
+
++-----------+
+| Range     |
++===========+
+| 0 - 65535 |
++-----------+
+
+
+
+
+.. _RNGFND4_SNR_MIN:
+
+RNGFND4\_SNR\_MIN: Minimum signal strength
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum signal strength \(SNR\) to accept distance
+
+
++-----------+
+| Range     |
++===========+
+| 0 - 65535 |
++-----------+
+
+
+
+
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 
 .. _parameters_RNGFND5_:
 
@@ -55067,6 +55502,11 @@ What type of rangefinder device that is connected
 | +-------+------------------------+ |
 | | 33    | USD1_CAN               | |
 | +-------+------------------------+ |
+<<<<<<< HEAD
+=======
+| | 34    | Benewake_CAN           | |
+| +-------+------------------------+ |
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 | | 100   | SITL                   | |
 | +-------+------------------------+ |
 |                                    |
@@ -55559,6 +55999,47 @@ Desired baud rate
 
 
 
+<<<<<<< HEAD
+=======
+.. _RNGFND5_RECV_ID:
+
+RNGFND5\_RECV\_ID: CAN receive ID
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+The receive ID of the CAN frames\. A value of zero means all IDs are accepted\.
+
+
++-----------+
+| Range     |
++===========+
+| 0 - 65535 |
++-----------+
+
+
+
+
+.. _RNGFND5_SNR_MIN:
+
+RNGFND5\_SNR\_MIN: Minimum signal strength
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum signal strength \(SNR\) to accept distance
+
+
++-----------+
+| Range     |
++===========+
+| 0 - 65535 |
++-----------+
+
+
+
+
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 
 .. _parameters_RNGFND6_:
 
@@ -55647,6 +56128,11 @@ What type of rangefinder device that is connected
 | +-------+------------------------+ |
 | | 33    | USD1_CAN               | |
 | +-------+------------------------+ |
+<<<<<<< HEAD
+=======
+| | 34    | Benewake_CAN           | |
+| +-------+------------------------+ |
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 | | 100   | SITL                   | |
 | +-------+------------------------+ |
 |                                    |
@@ -56139,6 +56625,47 @@ Desired baud rate
 
 
 
+<<<<<<< HEAD
+=======
+.. _RNGFND6_RECV_ID:
+
+RNGFND6\_RECV\_ID: CAN receive ID
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+The receive ID of the CAN frames\. A value of zero means all IDs are accepted\.
+
+
++-----------+
+| Range     |
++===========+
+| 0 - 65535 |
++-----------+
+
+
+
+
+.. _RNGFND6_SNR_MIN:
+
+RNGFND6\_SNR\_MIN: Minimum signal strength
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum signal strength \(SNR\) to accept distance
+
+
++-----------+
+| Range     |
++===========+
+| 0 - 65535 |
++-----------+
+
+
+
+
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 
 .. _parameters_RNGFND7_:
 
@@ -56227,6 +56754,11 @@ What type of rangefinder device that is connected
 | +-------+------------------------+ |
 | | 33    | USD1_CAN               | |
 | +-------+------------------------+ |
+<<<<<<< HEAD
+=======
+| | 34    | Benewake_CAN           | |
+| +-------+------------------------+ |
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 | | 100   | SITL                   | |
 | +-------+------------------------+ |
 |                                    |
@@ -56719,6 +57251,47 @@ Desired baud rate
 
 
 
+<<<<<<< HEAD
+=======
+.. _RNGFND7_RECV_ID:
+
+RNGFND7\_RECV\_ID: CAN receive ID
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+The receive ID of the CAN frames\. A value of zero means all IDs are accepted\.
+
+
++-----------+
+| Range     |
++===========+
+| 0 - 65535 |
++-----------+
+
+
+
+
+.. _RNGFND7_SNR_MIN:
+
+RNGFND7\_SNR\_MIN: Minimum signal strength
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum signal strength \(SNR\) to accept distance
+
+
++-----------+
+| Range     |
++===========+
+| 0 - 65535 |
++-----------+
+
+
+
+
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 
 .. _parameters_RNGFND8_:
 
@@ -56807,6 +57380,11 @@ What type of rangefinder device that is connected
 | +-------+------------------------+ |
 | | 33    | USD1_CAN               | |
 | +-------+------------------------+ |
+<<<<<<< HEAD
+=======
+| | 34    | Benewake_CAN           | |
+| +-------+------------------------+ |
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 | | 100   | SITL                   | |
 | +-------+------------------------+ |
 |                                    |
@@ -57299,6 +57877,47 @@ Desired baud rate
 
 
 
+<<<<<<< HEAD
+=======
+.. _RNGFND8_RECV_ID:
+
+RNGFND8\_RECV\_ID: CAN receive ID
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+The receive ID of the CAN frames\. A value of zero means all IDs are accepted\.
+
+
++-----------+
+| Range     |
++===========+
+| 0 - 65535 |
++-----------+
+
+
+
+
+.. _RNGFND8_SNR_MIN:
+
+RNGFND8\_SNR\_MIN: Minimum signal strength
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum signal strength \(SNR\) to accept distance
+
+
++-----------+
+| Range     |
++===========+
+| 0 - 65535 |
++-----------+
+
+
+
+
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 
 .. _parameters_RNGFND9_:
 
@@ -57387,6 +58006,11 @@ What type of rangefinder device that is connected
 | +-------+------------------------+ |
 | | 33    | USD1_CAN               | |
 | +-------+------------------------+ |
+<<<<<<< HEAD
+=======
+| | 34    | Benewake_CAN           | |
+| +-------+------------------------+ |
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 | | 100   | SITL                   | |
 | +-------+------------------------+ |
 |                                    |
@@ -57879,6 +58503,47 @@ Desired baud rate
 
 
 
+<<<<<<< HEAD
+=======
+.. _RNGFND9_RECV_ID:
+
+RNGFND9\_RECV\_ID: CAN receive ID
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+The receive ID of the CAN frames\. A value of zero means all IDs are accepted\.
+
+
++-----------+
+| Range     |
++===========+
+| 0 - 65535 |
++-----------+
+
+
+
+
+.. _RNGFND9_SNR_MIN:
+
+RNGFND9\_SNR\_MIN: Minimum signal strength
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum signal strength \(SNR\) to accept distance
+
+
++-----------+
+| Range     |
++===========+
+| 0 - 65535 |
++-----------+
+
+
+
+
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 
 .. _parameters_RNGFNDA_:
 
@@ -57967,6 +58632,11 @@ What type of rangefinder device that is connected
 | +-------+------------------------+ |
 | | 33    | USD1_CAN               | |
 | +-------+------------------------+ |
+<<<<<<< HEAD
+=======
+| | 34    | Benewake_CAN           | |
+| +-------+------------------------+ |
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 | | 100   | SITL                   | |
 | +-------+------------------------+ |
 |                                    |
@@ -58459,6 +59129,47 @@ Desired baud rate
 
 
 
+<<<<<<< HEAD
+=======
+.. _RNGFNDA_RECV_ID:
+
+RNGFNDA\_RECV\_ID: CAN receive ID
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+The receive ID of the CAN frames\. A value of zero means all IDs are accepted\.
+
+
++-----------+
+| Range     |
++===========+
+| 0 - 65535 |
++-----------+
+
+
+
+
+.. _RNGFNDA_SNR_MIN:
+
+RNGFNDA\_SNR\_MIN: Minimum signal strength
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| *Note: This parameter is for advanced users*
+
+Minimum signal strength \(SNR\) to accept distance
+
+
++-----------+
+| Range     |
++===========+
+| 0 - 65535 |
++-----------+
+
+
+
+
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 
 .. _parameters_RPM:
 
@@ -59272,6 +59983,11 @@ Control what protocol to use on the Telem1 port\. Note that the Frsky options re
 |                | +-------+----------------------------------+ |
 |                | | 37    | SmartAudio                       | |
 |                | +-------+----------------------------------+ |
+<<<<<<< HEAD
+=======
+|                | | 38    | FETtecOneWire                    | |
+|                | +-------+----------------------------------+ |
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 |                |                                              |
 +----------------+----------------------------------------------+
 
@@ -59416,6 +60132,11 @@ Control what protocol to use on the Telem2 port\. Note that the Frsky options re
 |                | +-------+----------------------------------+ |
 |                | | 37    | SmartAudio                       | |
 |                | +-------+----------------------------------+ |
+<<<<<<< HEAD
+=======
+|                | | 38    | FETtecOneWire                    | |
+|                | +-------+----------------------------------+ |
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 |                |                                              |
 +----------------+----------------------------------------------+
 
@@ -59560,6 +60281,11 @@ Control what protocol Serial 3 \(GPS\) should be used for\. Note that the Frsky 
 |                | +-------+----------------------------------+ |
 |                | | 37    | SmartAudio                       | |
 |                | +-------+----------------------------------+ |
+<<<<<<< HEAD
+=======
+|                | | 38    | FETtecOneWire                    | |
+|                | +-------+----------------------------------+ |
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 |                |                                              |
 +----------------+----------------------------------------------+
 
@@ -59704,6 +60430,11 @@ Control what protocol Serial4 port should be used for\. Note that the Frsky opti
 |                | +-------+----------------------------------+ |
 |                | | 37    | SmartAudio                       | |
 |                | +-------+----------------------------------+ |
+<<<<<<< HEAD
+=======
+|                | | 38    | FETtecOneWire                    | |
+|                | +-------+----------------------------------+ |
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 |                |                                              |
 +----------------+----------------------------------------------+
 
@@ -59848,6 +60579,11 @@ Control what protocol Serial5 port should be used for\. Note that the Frsky opti
 |                | +-------+----------------------------------+ |
 |                | | 37    | SmartAudio                       | |
 |                | +-------+----------------------------------+ |
+<<<<<<< HEAD
+=======
+|                | | 38    | FETtecOneWire                    | |
+|                | +-------+----------------------------------+ |
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 |                |                                              |
 +----------------+----------------------------------------------+
 
@@ -59992,6 +60728,11 @@ Control what protocol Serial6 port should be used for\. Note that the Frsky opti
 |                | +-------+----------------------------------+ |
 |                | | 37    | SmartAudio                       | |
 |                | +-------+----------------------------------+ |
+<<<<<<< HEAD
+=======
+|                | | 38    | FETtecOneWire                    | |
+|                | +-------+----------------------------------+ |
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 |                |                                              |
 +----------------+----------------------------------------------+
 
@@ -60505,6 +61246,13 @@ Control what protocol Serial7 port should be used for\. Note that the Frsky opti
 |                | +-------+----------------------------------+ |
 |                | | 36    | AHRS                             | |
 |                | +-------+----------------------------------+ |
+<<<<<<< HEAD
+=======
+|                | | 37    | SmartAudio                       | |
+|                | +-------+----------------------------------+ |
+|                | | 38    | FETtecOneWire                    | |
+|                | +-------+----------------------------------+ |
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 |                |                                              |
 +----------------+----------------------------------------------+
 
@@ -60693,6 +61441,13 @@ Control what protocol Serial8 port should be used for\. Note that the Frsky opti
 |                | +-------+----------------------------------+ |
 |                | | 36    | AHRS                             | |
 |                | +-------+----------------------------------+ |
+<<<<<<< HEAD
+=======
+|                | | 37    | SmartAudio                       | |
+|                | +-------+----------------------------------+ |
+|                | | 38    | FETtecOneWire                    | |
+|                | +-------+----------------------------------+ |
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 |                |                                              |
 +----------------+----------------------------------------------+
 
@@ -66483,6 +67238,124 @@ Mask of channels which are reversed\. This is used to configure ESCs in reversed
 
 
 
+<<<<<<< HEAD
+=======
+.. _parameters_SERVO_FTW_:
+
+SERVO\_FTW\_ Parameters
+-----------------------
+
+
+.. _SERVO_FTW_MASK:
+
+SERVO\_FTW\_MASK: Servo channel output bitmask
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Servo channel mask specifying FETtec ESC output\.
+
+
++-------------------+----------------+
+| Bitmask           | RebootRequired |
++===================+================+
+| +-----+---------+ | True           |
+| | Bit | Meaning | |                |
+| +=====+=========+ |                |
+| | 0   | SERVO1  | |                |
+| +-----+---------+ |                |
+| | 1   | SERVO2  | |                |
+| +-----+---------+ |                |
+| | 2   | SERVO3  | |                |
+| +-----+---------+ |                |
+| | 3   | SERVO4  | |                |
+| +-----+---------+ |                |
+| | 4   | SERVO5  | |                |
+| +-----+---------+ |                |
+| | 5   | SERVO6  | |                |
+| +-----+---------+ |                |
+| | 6   | SERVO7  | |                |
+| +-----+---------+ |                |
+| | 7   | SERVO8  | |                |
+| +-----+---------+ |                |
+| | 8   | SERVO9  | |                |
+| +-----+---------+ |                |
+| | 9   | SERVO10 | |                |
+| +-----+---------+ |                |
+| | 10  | SERVO11 | |                |
+| +-----+---------+ |                |
+| | 11  | SERVO12 | |                |
+| +-----+---------+ |                |
+|                   |                |
++-------------------+----------------+
+
+
+
+
+.. _SERVO_FTW_RVMASK:
+
+SERVO\_FTW\_RVMASK: Servo channel reverse rotation bitmask
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Servo channel mask to reverse rotation of FETtec ESC outputs\.
+
+
++-------------------+
+| Bitmask           |
++===================+
+| +-----+---------+ |
+| | Bit | Meaning | |
+| +=====+=========+ |
+| | 0   | SERVO1  | |
+| +-----+---------+ |
+| | 1   | SERVO2  | |
+| +-----+---------+ |
+| | 2   | SERVO3  | |
+| +-----+---------+ |
+| | 3   | SERVO4  | |
+| +-----+---------+ |
+| | 4   | SERVO5  | |
+| +-----+---------+ |
+| | 5   | SERVO6  | |
+| +-----+---------+ |
+| | 6   | SERVO7  | |
+| +-----+---------+ |
+| | 7   | SERVO8  | |
+| +-----+---------+ |
+| | 8   | SERVO9  | |
+| +-----+---------+ |
+| | 9   | SERVO10 | |
+| +-----+---------+ |
+| | 10  | SERVO11 | |
+| +-----+---------+ |
+| | 11  | SERVO12 | |
+| +-----+---------+ |
+|                   |
++-------------------+
+
+
+
+
+.. _SERVO_FTW_POLES:
+
+SERVO\_FTW\_POLES: Nr\. electrical poles
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Number of motor electrical poles
+
+
++--------+
+| Range  |
++========+
+| 2 - 50 |
++--------+
+
+
+
+
+
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 .. _parameters_SERVO_ROB_:
 
 SERVO\_ROB\_ Parameters

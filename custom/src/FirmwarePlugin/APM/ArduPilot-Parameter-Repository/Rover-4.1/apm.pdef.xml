@@ -1173,7 +1173,10 @@
         <values>
           <value code="-1">Disabled</value>
           <value code="2">Pixhawk/Pixracer/Navio2/Pixhawk2_PM1</value>
+<<<<<<< HEAD
           <value code="5">Navigator</value>
+=======
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
           <value code="13">Pixhawk2_PM2/CubeOrange_PM2</value>
           <value code="14">CubeOrange</value>
           <value code="16">Durandal</value>
@@ -1185,7 +1188,11 @@
         <values>
           <value code="-1">Disabled</value>
           <value code="3">Pixhawk/Pixracer/Navio2/Pixhawk2_PM1</value>
+<<<<<<< HEAD
           <value code="4">CubeOrange_PM2/Navigator</value>
+=======
+          <value code="4">CubeOrange_PM2</value>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
           <value code="14">Pixhawk2_PM2</value>
           <value code="15">CubeOrange</value>
           <value code="17">Durandal</value>
@@ -1307,7 +1314,10 @@
         <values>
           <value code="-1">Disabled</value>
           <value code="2">Pixhawk/Pixracer/Navio2/Pixhawk2_PM1</value>
+<<<<<<< HEAD
           <value code="5">Navigator</value>
+=======
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
           <value code="13">Pixhawk2_PM2/CubeOrange_PM2</value>
           <value code="14">CubeOrange</value>
           <value code="16">Durandal</value>
@@ -1319,7 +1329,11 @@
         <values>
           <value code="-1">Disabled</value>
           <value code="3">Pixhawk/Pixracer/Navio2/Pixhawk2_PM1</value>
+<<<<<<< HEAD
           <value code="4">CubeOrange_PM2/Navigator</value>
+=======
+          <value code="4">CubeOrange_PM2</value>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
           <value code="14">Pixhawk2_PM2</value>
           <value code="15">CubeOrange</value>
           <value code="17">Durandal</value>
@@ -1441,7 +1455,10 @@
         <values>
           <value code="-1">Disabled</value>
           <value code="2">Pixhawk/Pixracer/Navio2/Pixhawk2_PM1</value>
+<<<<<<< HEAD
           <value code="5">Navigator</value>
+=======
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
           <value code="13">Pixhawk2_PM2/CubeOrange_PM2</value>
           <value code="14">CubeOrange</value>
           <value code="16">Durandal</value>
@@ -1453,7 +1470,11 @@
         <values>
           <value code="-1">Disabled</value>
           <value code="3">Pixhawk/Pixracer/Navio2/Pixhawk2_PM1</value>
+<<<<<<< HEAD
           <value code="4">CubeOrange_PM2/Navigator</value>
+=======
+          <value code="4">CubeOrange_PM2</value>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
           <value code="14">Pixhawk2_PM2</value>
           <value code="15">CubeOrange</value>
           <value code="17">Durandal</value>
@@ -1575,7 +1596,10 @@
         <values>
           <value code="-1">Disabled</value>
           <value code="2">Pixhawk/Pixracer/Navio2/Pixhawk2_PM1</value>
+<<<<<<< HEAD
           <value code="5">Navigator</value>
+=======
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
           <value code="13">Pixhawk2_PM2/CubeOrange_PM2</value>
           <value code="14">CubeOrange</value>
           <value code="16">Durandal</value>
@@ -1587,7 +1611,11 @@
         <values>
           <value code="-1">Disabled</value>
           <value code="3">Pixhawk/Pixracer/Navio2/Pixhawk2_PM1</value>
+<<<<<<< HEAD
           <value code="4">CubeOrange_PM2/Navigator</value>
+=======
+          <value code="4">CubeOrange_PM2</value>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
           <value code="14">Pixhawk2_PM2</value>
           <value code="15">CubeOrange</value>
           <value code="17">Durandal</value>
@@ -1709,7 +1737,10 @@
         <values>
           <value code="-1">Disabled</value>
           <value code="2">Pixhawk/Pixracer/Navio2/Pixhawk2_PM1</value>
+<<<<<<< HEAD
           <value code="5">Navigator</value>
+=======
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
           <value code="13">Pixhawk2_PM2/CubeOrange_PM2</value>
           <value code="14">CubeOrange</value>
           <value code="16">Durandal</value>
@@ -1721,7 +1752,11 @@
         <values>
           <value code="-1">Disabled</value>
           <value code="3">Pixhawk/Pixracer/Navio2/Pixhawk2_PM1</value>
+<<<<<<< HEAD
           <value code="4">CubeOrange_PM2/Navigator</value>
+=======
+          <value code="4">CubeOrange_PM2</value>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
           <value code="14">Pixhawk2_PM2</value>
           <value code="15">CubeOrange</value>
           <value code="17">Durandal</value>
@@ -1843,7 +1878,10 @@
         <values>
           <value code="-1">Disabled</value>
           <value code="2">Pixhawk/Pixracer/Navio2/Pixhawk2_PM1</value>
+<<<<<<< HEAD
           <value code="5">Navigator</value>
+=======
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
           <value code="13">Pixhawk2_PM2/CubeOrange_PM2</value>
           <value code="14">CubeOrange</value>
           <value code="16">Durandal</value>
@@ -1855,7 +1893,11 @@
         <values>
           <value code="-1">Disabled</value>
           <value code="3">Pixhawk/Pixracer/Navio2/Pixhawk2_PM1</value>
+<<<<<<< HEAD
           <value code="4">CubeOrange_PM2/Navigator</value>
+=======
+          <value code="4">CubeOrange_PM2</value>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
           <value code="14">Pixhawk2_PM2</value>
           <value code="15">CubeOrange</value>
           <value code="17">Durandal</value>
@@ -1977,7 +2019,10 @@
         <values>
           <value code="-1">Disabled</value>
           <value code="2">Pixhawk/Pixracer/Navio2/Pixhawk2_PM1</value>
+<<<<<<< HEAD
           <value code="5">Navigator</value>
+=======
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
           <value code="13">Pixhawk2_PM2/CubeOrange_PM2</value>
           <value code="14">CubeOrange</value>
           <value code="16">Durandal</value>
@@ -1989,7 +2034,11 @@
         <values>
           <value code="-1">Disabled</value>
           <value code="3">Pixhawk/Pixracer/Navio2/Pixhawk2_PM1</value>
+<<<<<<< HEAD
           <value code="4">CubeOrange_PM2/Navigator</value>
+=======
+          <value code="4">CubeOrange_PM2</value>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
           <value code="14">Pixhawk2_PM2</value>
           <value code="15">CubeOrange</value>
           <value code="17">Durandal</value>
@@ -2111,7 +2160,10 @@
         <values>
           <value code="-1">Disabled</value>
           <value code="2">Pixhawk/Pixracer/Navio2/Pixhawk2_PM1</value>
+<<<<<<< HEAD
           <value code="5">Navigator</value>
+=======
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
           <value code="13">Pixhawk2_PM2/CubeOrange_PM2</value>
           <value code="14">CubeOrange</value>
           <value code="16">Durandal</value>
@@ -2123,7 +2175,11 @@
         <values>
           <value code="-1">Disabled</value>
           <value code="3">Pixhawk/Pixracer/Navio2/Pixhawk2_PM1</value>
+<<<<<<< HEAD
           <value code="4">CubeOrange_PM2/Navigator</value>
+=======
+          <value code="4">CubeOrange_PM2</value>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
           <value code="14">Pixhawk2_PM2</value>
           <value code="15">CubeOrange</value>
           <value code="17">Durandal</value>
@@ -2245,7 +2301,10 @@
         <values>
           <value code="-1">Disabled</value>
           <value code="2">Pixhawk/Pixracer/Navio2/Pixhawk2_PM1</value>
+<<<<<<< HEAD
           <value code="5">Navigator</value>
+=======
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
           <value code="13">Pixhawk2_PM2/CubeOrange_PM2</value>
           <value code="14">CubeOrange</value>
           <value code="16">Durandal</value>
@@ -2257,7 +2316,11 @@
         <values>
           <value code="-1">Disabled</value>
           <value code="3">Pixhawk/Pixracer/Navio2/Pixhawk2_PM1</value>
+<<<<<<< HEAD
           <value code="4">CubeOrange_PM2/Navigator</value>
+=======
+          <value code="4">CubeOrange_PM2</value>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
           <value code="14">Pixhawk2_PM2</value>
           <value code="15">CubeOrange</value>
           <value code="17">Durandal</value>
@@ -3091,6 +3154,10 @@
           <value code="5">CANTester</value>
           <value code="8">KDECAN</value>
           <value code="9">PacketDigitalCAN</value>
+<<<<<<< HEAD
+=======
+          <value code="11">Benewake</value>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -3164,6 +3231,10 @@
           <value code="5">CANTester</value>
           <value code="8">KDECAN</value>
           <value code="9">PacketDigitalCAN</value>
+<<<<<<< HEAD
+=======
+          <value code="11">Benewake</value>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -3237,6 +3308,10 @@
           <value code="5">CANTester</value>
           <value code="8">KDECAN</value>
           <value code="9">PacketDigitalCAN</value>
+<<<<<<< HEAD
+=======
+          <value code="11">Benewake</value>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
         </values>
         <field name="RebootRequired">True</field>
       </param>
@@ -11781,6 +11856,10 @@
           <value code="31">GYUS42v2</value>
           <value code="32">MSP</value>
           <value code="33">USD1_CAN</value>
+<<<<<<< HEAD
+=======
+          <value code="34">Benewake_CAN</value>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
           <value code="100">SITL</value>
         </values>
       </param>
@@ -11915,6 +11994,15 @@
           <value code="1">High Speed</value>
         </values>
       </param>
+<<<<<<< HEAD
+=======
+      <param humanName="CAN receive ID" name="RNGFND1_RECV_ID" documentation="The receive ID of the CAN frames. A value of zero means all IDs are accepted." user="Advanced">
+        <field name="Range">0 65535</field>
+      </param>
+      <param humanName="Minimum signal strength" name="RNGFND1_SNR_MIN" documentation="Minimum signal strength (SNR) to accept distance" user="Advanced">
+        <field name="Range">0 65535</field>
+      </param>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
     </parameters>
     <parameters name="RNGFND2_">
       <param humanName="Rangefinder type" name="RNGFND2_TYPE" documentation="What type of rangefinder device that is connected" user="Standard">
@@ -11952,6 +12040,10 @@
           <value code="31">GYUS42v2</value>
           <value code="32">MSP</value>
           <value code="33">USD1_CAN</value>
+<<<<<<< HEAD
+=======
+          <value code="34">Benewake_CAN</value>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
           <value code="100">SITL</value>
         </values>
       </param>
@@ -12086,6 +12178,15 @@
           <value code="1">High Speed</value>
         </values>
       </param>
+<<<<<<< HEAD
+=======
+      <param humanName="CAN receive ID" name="RNGFND2_RECV_ID" documentation="The receive ID of the CAN frames. A value of zero means all IDs are accepted." user="Advanced">
+        <field name="Range">0 65535</field>
+      </param>
+      <param humanName="Minimum signal strength" name="RNGFND2_SNR_MIN" documentation="Minimum signal strength (SNR) to accept distance" user="Advanced">
+        <field name="Range">0 65535</field>
+      </param>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
     </parameters>
     <parameters name="RNGFND3_">
       <param humanName="Rangefinder type" name="RNGFND3_TYPE" documentation="What type of rangefinder device that is connected" user="Standard">
@@ -12123,6 +12224,10 @@
           <value code="31">GYUS42v2</value>
           <value code="32">MSP</value>
           <value code="33">USD1_CAN</value>
+<<<<<<< HEAD
+=======
+          <value code="34">Benewake_CAN</value>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
           <value code="100">SITL</value>
         </values>
       </param>
@@ -12257,6 +12362,15 @@
           <value code="1">High Speed</value>
         </values>
       </param>
+<<<<<<< HEAD
+=======
+      <param humanName="CAN receive ID" name="RNGFND3_RECV_ID" documentation="The receive ID of the CAN frames. A value of zero means all IDs are accepted." user="Advanced">
+        <field name="Range">0 65535</field>
+      </param>
+      <param humanName="Minimum signal strength" name="RNGFND3_SNR_MIN" documentation="Minimum signal strength (SNR) to accept distance" user="Advanced">
+        <field name="Range">0 65535</field>
+      </param>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
     </parameters>
     <parameters name="RNGFND4_">
       <param humanName="Rangefinder type" name="RNGFND4_TYPE" documentation="What type of rangefinder device that is connected" user="Standard">
@@ -12294,6 +12408,10 @@
           <value code="31">GYUS42v2</value>
           <value code="32">MSP</value>
           <value code="33">USD1_CAN</value>
+<<<<<<< HEAD
+=======
+          <value code="34">Benewake_CAN</value>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
           <value code="100">SITL</value>
         </values>
       </param>
@@ -12428,6 +12546,15 @@
           <value code="1">High Speed</value>
         </values>
       </param>
+<<<<<<< HEAD
+=======
+      <param humanName="CAN receive ID" name="RNGFND4_RECV_ID" documentation="The receive ID of the CAN frames. A value of zero means all IDs are accepted." user="Advanced">
+        <field name="Range">0 65535</field>
+      </param>
+      <param humanName="Minimum signal strength" name="RNGFND4_SNR_MIN" documentation="Minimum signal strength (SNR) to accept distance" user="Advanced">
+        <field name="Range">0 65535</field>
+      </param>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
     </parameters>
     <parameters name="RNGFND5_">
       <param humanName="Rangefinder type" name="RNGFND5_TYPE" documentation="What type of rangefinder device that is connected" user="Standard">
@@ -12465,6 +12592,10 @@
           <value code="31">GYUS42v2</value>
           <value code="32">MSP</value>
           <value code="33">USD1_CAN</value>
+<<<<<<< HEAD
+=======
+          <value code="34">Benewake_CAN</value>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
           <value code="100">SITL</value>
         </values>
       </param>
@@ -12599,6 +12730,15 @@
           <value code="1">High Speed</value>
         </values>
       </param>
+<<<<<<< HEAD
+=======
+      <param humanName="CAN receive ID" name="RNGFND5_RECV_ID" documentation="The receive ID of the CAN frames. A value of zero means all IDs are accepted." user="Advanced">
+        <field name="Range">0 65535</field>
+      </param>
+      <param humanName="Minimum signal strength" name="RNGFND5_SNR_MIN" documentation="Minimum signal strength (SNR) to accept distance" user="Advanced">
+        <field name="Range">0 65535</field>
+      </param>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
     </parameters>
     <parameters name="RNGFND6_">
       <param humanName="Rangefinder type" name="RNGFND6_TYPE" documentation="What type of rangefinder device that is connected" user="Standard">
@@ -12636,6 +12776,10 @@
           <value code="31">GYUS42v2</value>
           <value code="32">MSP</value>
           <value code="33">USD1_CAN</value>
+<<<<<<< HEAD
+=======
+          <value code="34">Benewake_CAN</value>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
           <value code="100">SITL</value>
         </values>
       </param>
@@ -12770,6 +12914,15 @@
           <value code="1">High Speed</value>
         </values>
       </param>
+<<<<<<< HEAD
+=======
+      <param humanName="CAN receive ID" name="RNGFND6_RECV_ID" documentation="The receive ID of the CAN frames. A value of zero means all IDs are accepted." user="Advanced">
+        <field name="Range">0 65535</field>
+      </param>
+      <param humanName="Minimum signal strength" name="RNGFND6_SNR_MIN" documentation="Minimum signal strength (SNR) to accept distance" user="Advanced">
+        <field name="Range">0 65535</field>
+      </param>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
     </parameters>
     <parameters name="RNGFND7_">
       <param humanName="Rangefinder type" name="RNGFND7_TYPE" documentation="What type of rangefinder device that is connected" user="Standard">
@@ -12807,6 +12960,10 @@
           <value code="31">GYUS42v2</value>
           <value code="32">MSP</value>
           <value code="33">USD1_CAN</value>
+<<<<<<< HEAD
+=======
+          <value code="34">Benewake_CAN</value>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
           <value code="100">SITL</value>
         </values>
       </param>
@@ -12941,6 +13098,15 @@
           <value code="1">High Speed</value>
         </values>
       </param>
+<<<<<<< HEAD
+=======
+      <param humanName="CAN receive ID" name="RNGFND7_RECV_ID" documentation="The receive ID of the CAN frames. A value of zero means all IDs are accepted." user="Advanced">
+        <field name="Range">0 65535</field>
+      </param>
+      <param humanName="Minimum signal strength" name="RNGFND7_SNR_MIN" documentation="Minimum signal strength (SNR) to accept distance" user="Advanced">
+        <field name="Range">0 65535</field>
+      </param>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
     </parameters>
     <parameters name="RNGFND8_">
       <param humanName="Rangefinder type" name="RNGFND8_TYPE" documentation="What type of rangefinder device that is connected" user="Standard">
@@ -12978,6 +13144,10 @@
           <value code="31">GYUS42v2</value>
           <value code="32">MSP</value>
           <value code="33">USD1_CAN</value>
+<<<<<<< HEAD
+=======
+          <value code="34">Benewake_CAN</value>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
           <value code="100">SITL</value>
         </values>
       </param>
@@ -13112,6 +13282,15 @@
           <value code="1">High Speed</value>
         </values>
       </param>
+<<<<<<< HEAD
+=======
+      <param humanName="CAN receive ID" name="RNGFND8_RECV_ID" documentation="The receive ID of the CAN frames. A value of zero means all IDs are accepted." user="Advanced">
+        <field name="Range">0 65535</field>
+      </param>
+      <param humanName="Minimum signal strength" name="RNGFND8_SNR_MIN" documentation="Minimum signal strength (SNR) to accept distance" user="Advanced">
+        <field name="Range">0 65535</field>
+      </param>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
     </parameters>
     <parameters name="RNGFND9_">
       <param humanName="Rangefinder type" name="RNGFND9_TYPE" documentation="What type of rangefinder device that is connected" user="Standard">
@@ -13149,6 +13328,10 @@
           <value code="31">GYUS42v2</value>
           <value code="32">MSP</value>
           <value code="33">USD1_CAN</value>
+<<<<<<< HEAD
+=======
+          <value code="34">Benewake_CAN</value>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
           <value code="100">SITL</value>
         </values>
       </param>
@@ -13283,6 +13466,15 @@
           <value code="1">High Speed</value>
         </values>
       </param>
+<<<<<<< HEAD
+=======
+      <param humanName="CAN receive ID" name="RNGFND9_RECV_ID" documentation="The receive ID of the CAN frames. A value of zero means all IDs are accepted." user="Advanced">
+        <field name="Range">0 65535</field>
+      </param>
+      <param humanName="Minimum signal strength" name="RNGFND9_SNR_MIN" documentation="Minimum signal strength (SNR) to accept distance" user="Advanced">
+        <field name="Range">0 65535</field>
+      </param>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
     </parameters>
     <parameters name="RNGFNDA_">
       <param humanName="Rangefinder type" name="RNGFNDA_TYPE" documentation="What type of rangefinder device that is connected" user="Standard">
@@ -13320,6 +13512,10 @@
           <value code="31">GYUS42v2</value>
           <value code="32">MSP</value>
           <value code="33">USD1_CAN</value>
+<<<<<<< HEAD
+=======
+          <value code="34">Benewake_CAN</value>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
           <value code="100">SITL</value>
         </values>
       </param>
@@ -13454,6 +13650,15 @@
           <value code="1">High Speed</value>
         </values>
       </param>
+<<<<<<< HEAD
+=======
+      <param humanName="CAN receive ID" name="RNGFNDA_RECV_ID" documentation="The receive ID of the CAN frames. A value of zero means all IDs are accepted." user="Advanced">
+        <field name="Range">0 65535</field>
+      </param>
+      <param humanName="Minimum signal strength" name="RNGFNDA_SNR_MIN" documentation="Minimum signal strength (SNR) to accept distance" user="Advanced">
+        <field name="Range">0 65535</field>
+      </param>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
     </parameters>
     <parameters name="RPM">
       <param humanName="RPM type" name="RPM_TYPE" documentation="What type of RPM sensor is connected" user="Standard">

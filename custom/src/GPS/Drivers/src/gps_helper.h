@@ -87,6 +87,17 @@ enum class GPSCallbackType {
 	gotRTCMMessage,
 
 	/**
+<<<<<<< HEAD
+=======
+	 * Got a relative position message from the device.
+	 * data1: pointer to the message
+	 * data2: message length
+	 * return: ignored
+	 */
+	gotRelativePositionMessage,
+
+	/**
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 	 * message about current survey-in status
 	 * data1: points to a SurveyInStatus struct
 	 * data2: ignored
@@ -173,12 +184,31 @@ public:
 		ENABLE_SBAS =       1 << 1,
 		ENABLE_GALILEO =    1 << 2,
 		ENABLE_BEIDOU =     1 << 3,
+<<<<<<< HEAD
 		ENABLE_GLONASS =    1 << 4
+=======
+		ENABLE_GLONASS =    1 << 4,
+		ENABLE_NAVIC =      1 << 5
+	};
+
+	enum class InterfaceProtocolsMask : int32_t {
+		ALL_DISABLED =        0,
+		I2C_IN_PROT_UBX =     1 << 0,
+		I2C_IN_PROT_NMEA =    1 << 1,
+		I2C_IN_PROT_RTCM3X =  1 << 2,
+		I2C_OUT_PROT_UBX =    1 << 3,
+		I2C_OUT_PROT_NMEA =   1 << 4,
+		I2C_OUT_PROT_RTCM3X = 1 << 5
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 	};
 
 	struct GPSConfig {
 		OutputMode output_mode;
 		GNSSSystemsMask gnss_systems;
+<<<<<<< HEAD
+=======
+		InterfaceProtocolsMask interface_protocols;
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 	};
 
 
@@ -271,6 +301,15 @@ protected:
 		_callback(GPSCallbackType::gotRTCMMessage, buf, buf_length, _callback_user);
 	}
 
+<<<<<<< HEAD
+=======
+	/** got a relative position message from the device */
+	void gotRelativePositionMessage(sensor_gnss_relative_s &gnss_relative)
+	{
+		_callback(GPSCallbackType::gotRelativePositionMessage, &gnss_relative, sizeof(sensor_gnss_relative_s), _callback_user);
+	}
+
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 	void setClock(timespec &t)
 	{
 		_callback(GPSCallbackType::setClock, &t, 0, _callback_user);
@@ -304,3 +343,11 @@ inline bool operator&(GPSHelper::GNSSSystemsMask a, GPSHelper::GNSSSystemsMask b
 {
 	return static_cast<int32_t>(a) & static_cast<int32_t>(b);
 }
+<<<<<<< HEAD
+=======
+
+inline bool operator&(GPSHelper::InterfaceProtocolsMask a, GPSHelper::InterfaceProtocolsMask b)
+{
+	return static_cast<int32_t>(a) & static_cast<int32_t>(b);
+}
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db

@@ -1146,7 +1146,11 @@ DO NOT EDIT
 
 <p>Flight mode specific options</p>
 <ul>
+<<<<<<< HEAD
 <li>Bitmask: 0:Rudder mixing in direct flight modes only (Manual / Stabilize / Acro),1:Use centered throttle in Cruise or FBWB to indicate trim airspeed, 2:Disable attitude check for takeoff arming, 3:Force target airspeed to trim airspeed in Cruise or FBWB, 4: Climb to ALT_HOLD_RTL before turning for RTL, 5: Enable yaw damper in acro mode, 6: Surpress speed scaling during auto takeoffs to be 1 or less to prevent oscillations without airpseed sensor, 7:EnableDefaultAirspeed for takeoff</li>
+=======
+<li>Bitmask: 0:Rudder mixing in direct flight modes only (Manual / Stabilize / Acro),1:Use centered throttle in Cruise or FBWB to indicate trim airspeed, 2:Disable attitude check for takeoff arming, 3:Force target airspeed to trim airspeed in Cruise or FBWB, 4: Climb to ALT_HOLD_RTL before turning for RTL, 5: Enable yaw damper in acro mode, 6: Surpress speed scaling during auto takeoffs to be 1 or less to prevent oscillations without airpseed sensor, 7:EnableDefaultAirspeed for takeoff, 11:Disable suppression of fixed wing rate gains in ground mode</li>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 </ul>
 
 
@@ -4855,7 +4859,11 @@ DO NOT EDIT
 
 <p>Board specific option flags</p>
 <ul>
+<<<<<<< HEAD
 <li>Bitmask: 0:Enable hardware watchdog, 1:Disable MAVftp, 2:Enable set of internal parameters</li>
+=======
+<li>Bitmask: 0:Enable hardware watchdog, 1:Disable MAVftp, 2:Enable set of internal parameters, 3:Enable Debug Pins</li>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 </ul>
 
 
@@ -5690,6 +5698,10 @@ DO NOT EDIT
 <tr><td>5</td><td>CANTester</td></tr>
 <tr><td>8</td><td>KDECAN</td></tr>
 <tr><td>9</td><td>PacketDigitalCAN</td></tr>
+<<<<<<< HEAD
+=======
+<tr><td>11</td><td>Benewake</td></tr>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -5806,6 +5818,17 @@ DO NOT EDIT
 </ul>
 
 
+<<<<<<< HEAD
+=======
+<h2>UAVCAN options (CAN_D1_UC_OPTION)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Option flags</p>
+<ul>
+<li>Bitmask: 0:ClearDNADatabase,1:IgnoreDNANodeConflicts</li>
+</ul>
+
+
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 <h1>CAN_D2_ Parameters</h1>
 
 
@@ -5821,6 +5844,10 @@ DO NOT EDIT
 <tr><td>5</td><td>CANTester</td></tr>
 <tr><td>8</td><td>KDECAN</td></tr>
 <tr><td>9</td><td>PacketDigitalCAN</td></tr>
+<<<<<<< HEAD
+=======
+<tr><td>11</td><td>Benewake</td></tr>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -5937,6 +5964,17 @@ DO NOT EDIT
 </ul>
 
 
+<<<<<<< HEAD
+=======
+<h2>UAVCAN options (CAN_D2_UC_OPTION)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Option flags</p>
+<ul>
+<li>Bitmask: 0:ClearDNADatabase,1:IgnoreDNANodeConflicts</li>
+</ul>
+
+
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 <h1>CAN_D3_ Parameters</h1>
 
 
@@ -5952,6 +5990,10 @@ DO NOT EDIT
 <tr><td>5</td><td>CANTester</td></tr>
 <tr><td>8</td><td>KDECAN</td></tr>
 <tr><td>9</td><td>PacketDigitalCAN</td></tr>
+<<<<<<< HEAD
+=======
+<tr><td>11</td><td>Benewake</td></tr>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -6068,6 +6110,17 @@ DO NOT EDIT
 </ul>
 
 
+<<<<<<< HEAD
+=======
+<h2>UAVCAN options (CAN_D3_UC_OPTION)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Option flags</p>
+<ul>
+<li>Bitmask: 0:ClearDNADatabase,1:IgnoreDNANodeConflicts</li>
+</ul>
+
+
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 <h1>CAN_P1_ Parameters</h1>
 
 
@@ -8392,6 +8445,18 @@ DO NOT EDIT
 </ul>
 
 
+<<<<<<< HEAD
+=======
+<h2>Primary core number (EK3_PRIMARY)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>The core number (index in IMU mask) that will be used as the primary EKF core on startup. While disarmed the EKF will force the use of this core. A value of 0 corresponds to the first IMU in EK3_IMU_MASK.</p>
+<ul>
+<li>Range: 0 2</li>
+<li>Increment: 1</li>
+</ul>
+
+
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 <h1>EK3_SRC Parameters</h1>
 
 
@@ -22353,7 +22418,11 @@ DO NOT EDIT
 
 <p>RC input options</p>
 <ul>
+<<<<<<< HEAD
 <li>Bitmask: 0:Ignore RC Receiver, 1:Ignore MAVLink Overrides, 2:Ignore Receiver Failsafe bit but allow other RC failsafes if setup, 3:FPort Pad, 4:Log RC input bytes, 5:Arming check throttle for 0 input, 6:Skip the arming check for neutral Roll/Pitch/Yay sticks, 7:Allow Switch reverse, 8:Use passthrough for CRSF telemetry, 9:Suppress CRSF mode/rate message for ELRS systems</li>
+=======
+<li>Bitmask: 0:Ignore RC Receiver, 1:Ignore MAVLink Overrides, 2:Ignore Receiver Failsafe bit but allow other RC failsafes if setup, 3:FPort Pad, 4:Log RC input bytes, 5:Arming check throttle for 0 input, 6:Skip the arming check for neutral Roll/Pitch/Yay sticks, 7:Allow Switch reverse, 8:Use passthrough for CRSF telemetry, 9:Suppress CRSF mode/rate message for ELRS systems, 10:Enable RC Protocol re-detection</li>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 </ul>
 
 
@@ -22473,6 +22542,11 @@ DO NOT EDIT
 <tr><td>102</td><td>Camera Mode Toggle</td></tr>
 <tr><td>105</td><td>GPS Disable Yaw</td></tr>
 <tr><td>106</td><td>Disable Airspeed Use</td></tr>
+<<<<<<< HEAD
+=======
+<tr><td>107</td><td>EnableFixedWingAutotune</td></tr>
+<tr><td>108</td><td>ModeQRTL</td></tr>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
@@ -22595,6 +22669,11 @@ DO NOT EDIT
 <tr><td>102</td><td>Camera Mode Toggle</td></tr>
 <tr><td>105</td><td>GPS Disable Yaw</td></tr>
 <tr><td>106</td><td>Disable Airspeed Use</td></tr>
+<<<<<<< HEAD
+=======
+<tr><td>107</td><td>EnableFixedWingAutotune</td></tr>
+<tr><td>108</td><td>ModeQRTL</td></tr>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
@@ -22717,6 +22796,11 @@ DO NOT EDIT
 <tr><td>102</td><td>Camera Mode Toggle</td></tr>
 <tr><td>105</td><td>GPS Disable Yaw</td></tr>
 <tr><td>106</td><td>Disable Airspeed Use</td></tr>
+<<<<<<< HEAD
+=======
+<tr><td>107</td><td>EnableFixedWingAutotune</td></tr>
+<tr><td>108</td><td>ModeQRTL</td></tr>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
@@ -22839,6 +22923,11 @@ DO NOT EDIT
 <tr><td>102</td><td>Camera Mode Toggle</td></tr>
 <tr><td>105</td><td>GPS Disable Yaw</td></tr>
 <tr><td>106</td><td>Disable Airspeed Use</td></tr>
+<<<<<<< HEAD
+=======
+<tr><td>107</td><td>EnableFixedWingAutotune</td></tr>
+<tr><td>108</td><td>ModeQRTL</td></tr>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
@@ -22961,6 +23050,11 @@ DO NOT EDIT
 <tr><td>102</td><td>Camera Mode Toggle</td></tr>
 <tr><td>105</td><td>GPS Disable Yaw</td></tr>
 <tr><td>106</td><td>Disable Airspeed Use</td></tr>
+<<<<<<< HEAD
+=======
+<tr><td>107</td><td>EnableFixedWingAutotune</td></tr>
+<tr><td>108</td><td>ModeQRTL</td></tr>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
@@ -23083,6 +23177,11 @@ DO NOT EDIT
 <tr><td>102</td><td>Camera Mode Toggle</td></tr>
 <tr><td>105</td><td>GPS Disable Yaw</td></tr>
 <tr><td>106</td><td>Disable Airspeed Use</td></tr>
+<<<<<<< HEAD
+=======
+<tr><td>107</td><td>EnableFixedWingAutotune</td></tr>
+<tr><td>108</td><td>ModeQRTL</td></tr>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
@@ -23205,6 +23304,11 @@ DO NOT EDIT
 <tr><td>102</td><td>Camera Mode Toggle</td></tr>
 <tr><td>105</td><td>GPS Disable Yaw</td></tr>
 <tr><td>106</td><td>Disable Airspeed Use</td></tr>
+<<<<<<< HEAD
+=======
+<tr><td>107</td><td>EnableFixedWingAutotune</td></tr>
+<tr><td>108</td><td>ModeQRTL</td></tr>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
@@ -23327,6 +23431,11 @@ DO NOT EDIT
 <tr><td>102</td><td>Camera Mode Toggle</td></tr>
 <tr><td>105</td><td>GPS Disable Yaw</td></tr>
 <tr><td>106</td><td>Disable Airspeed Use</td></tr>
+<<<<<<< HEAD
+=======
+<tr><td>107</td><td>EnableFixedWingAutotune</td></tr>
+<tr><td>108</td><td>ModeQRTL</td></tr>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
@@ -23449,6 +23558,11 @@ DO NOT EDIT
 <tr><td>102</td><td>Camera Mode Toggle</td></tr>
 <tr><td>105</td><td>GPS Disable Yaw</td></tr>
 <tr><td>106</td><td>Disable Airspeed Use</td></tr>
+<<<<<<< HEAD
+=======
+<tr><td>107</td><td>EnableFixedWingAutotune</td></tr>
+<tr><td>108</td><td>ModeQRTL</td></tr>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
@@ -23571,6 +23685,11 @@ DO NOT EDIT
 <tr><td>102</td><td>Camera Mode Toggle</td></tr>
 <tr><td>105</td><td>GPS Disable Yaw</td></tr>
 <tr><td>106</td><td>Disable Airspeed Use</td></tr>
+<<<<<<< HEAD
+=======
+<tr><td>107</td><td>EnableFixedWingAutotune</td></tr>
+<tr><td>108</td><td>ModeQRTL</td></tr>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
@@ -23693,6 +23812,11 @@ DO NOT EDIT
 <tr><td>102</td><td>Camera Mode Toggle</td></tr>
 <tr><td>105</td><td>GPS Disable Yaw</td></tr>
 <tr><td>106</td><td>Disable Airspeed Use</td></tr>
+<<<<<<< HEAD
+=======
+<tr><td>107</td><td>EnableFixedWingAutotune</td></tr>
+<tr><td>108</td><td>ModeQRTL</td></tr>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
@@ -23815,6 +23939,11 @@ DO NOT EDIT
 <tr><td>102</td><td>Camera Mode Toggle</td></tr>
 <tr><td>105</td><td>GPS Disable Yaw</td></tr>
 <tr><td>106</td><td>Disable Airspeed Use</td></tr>
+<<<<<<< HEAD
+=======
+<tr><td>107</td><td>EnableFixedWingAutotune</td></tr>
+<tr><td>108</td><td>ModeQRTL</td></tr>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
@@ -23937,6 +24066,11 @@ DO NOT EDIT
 <tr><td>102</td><td>Camera Mode Toggle</td></tr>
 <tr><td>105</td><td>GPS Disable Yaw</td></tr>
 <tr><td>106</td><td>Disable Airspeed Use</td></tr>
+<<<<<<< HEAD
+=======
+<tr><td>107</td><td>EnableFixedWingAutotune</td></tr>
+<tr><td>108</td><td>ModeQRTL</td></tr>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
@@ -24059,6 +24193,11 @@ DO NOT EDIT
 <tr><td>102</td><td>Camera Mode Toggle</td></tr>
 <tr><td>105</td><td>GPS Disable Yaw</td></tr>
 <tr><td>106</td><td>Disable Airspeed Use</td></tr>
+<<<<<<< HEAD
+=======
+<tr><td>107</td><td>EnableFixedWingAutotune</td></tr>
+<tr><td>108</td><td>ModeQRTL</td></tr>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
@@ -24181,6 +24320,11 @@ DO NOT EDIT
 <tr><td>102</td><td>Camera Mode Toggle</td></tr>
 <tr><td>105</td><td>GPS Disable Yaw</td></tr>
 <tr><td>106</td><td>Disable Airspeed Use</td></tr>
+<<<<<<< HEAD
+=======
+<tr><td>107</td><td>EnableFixedWingAutotune</td></tr>
+<tr><td>108</td><td>ModeQRTL</td></tr>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
@@ -24303,6 +24447,11 @@ DO NOT EDIT
 <tr><td>102</td><td>Camera Mode Toggle</td></tr>
 <tr><td>105</td><td>GPS Disable Yaw</td></tr>
 <tr><td>106</td><td>Disable Airspeed Use</td></tr>
+<<<<<<< HEAD
+=======
+<tr><td>107</td><td>EnableFixedWingAutotune</td></tr>
+<tr><td>108</td><td>ModeQRTL</td></tr>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 <tr><td>208</td><td>Flap</td></tr>
 <tr><td>209</td><td>Forward Throttle</td></tr>
 <tr><td>300</td><td>Scripting1</td></tr>
@@ -24649,6 +24798,10 @@ DO NOT EDIT
 <tr><td>31</td><td>GYUS42v2</td></tr>
 <tr><td>32</td><td>MSP</td></tr>
 <tr><td>33</td><td>USD1_CAN</td></tr>
+<<<<<<< HEAD
+=======
+<tr><td>34</td><td>Benewake_CAN</td></tr>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 <tr><td>100</td><td>SITL</td></tr>
 </table>
 </ul>
@@ -24881,6 +25034,25 @@ DO NOT EDIT
 </ul>
 
 
+<<<<<<< HEAD
+=======
+<h2>CAN receive ID (RNGFND1_RECV_ID)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>The receive ID of the CAN frames. A value of zero means all IDs are accepted.</p>
+<ul>
+<li>Range: 0 65535</li>
+</ul>
+
+
+<h2>Minimum signal strength (RNGFND1_SNR_MIN)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Minimum signal strength (SNR) to accept distance</p>
+<ul>
+<li>Range: 0 65535</li>
+</ul>
+
+
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 <h1>RNGFND2_ Parameters</h1>
 
 
@@ -24922,6 +25094,10 @@ DO NOT EDIT
 <tr><td>31</td><td>GYUS42v2</td></tr>
 <tr><td>32</td><td>MSP</td></tr>
 <tr><td>33</td><td>USD1_CAN</td></tr>
+<<<<<<< HEAD
+=======
+<tr><td>34</td><td>Benewake_CAN</td></tr>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 <tr><td>100</td><td>SITL</td></tr>
 </table>
 </ul>
@@ -25154,6 +25330,25 @@ DO NOT EDIT
 </ul>
 
 
+<<<<<<< HEAD
+=======
+<h2>CAN receive ID (RNGFND2_RECV_ID)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>The receive ID of the CAN frames. A value of zero means all IDs are accepted.</p>
+<ul>
+<li>Range: 0 65535</li>
+</ul>
+
+
+<h2>Minimum signal strength (RNGFND2_SNR_MIN)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Minimum signal strength (SNR) to accept distance</p>
+<ul>
+<li>Range: 0 65535</li>
+</ul>
+
+
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 <h1>RNGFND3_ Parameters</h1>
 
 
@@ -25195,6 +25390,10 @@ DO NOT EDIT
 <tr><td>31</td><td>GYUS42v2</td></tr>
 <tr><td>32</td><td>MSP</td></tr>
 <tr><td>33</td><td>USD1_CAN</td></tr>
+<<<<<<< HEAD
+=======
+<tr><td>34</td><td>Benewake_CAN</td></tr>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 <tr><td>100</td><td>SITL</td></tr>
 </table>
 </ul>
@@ -25427,6 +25626,25 @@ DO NOT EDIT
 </ul>
 
 
+<<<<<<< HEAD
+=======
+<h2>CAN receive ID (RNGFND3_RECV_ID)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>The receive ID of the CAN frames. A value of zero means all IDs are accepted.</p>
+<ul>
+<li>Range: 0 65535</li>
+</ul>
+
+
+<h2>Minimum signal strength (RNGFND3_SNR_MIN)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Minimum signal strength (SNR) to accept distance</p>
+<ul>
+<li>Range: 0 65535</li>
+</ul>
+
+
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 <h1>RNGFND4_ Parameters</h1>
 
 
@@ -25468,6 +25686,10 @@ DO NOT EDIT
 <tr><td>31</td><td>GYUS42v2</td></tr>
 <tr><td>32</td><td>MSP</td></tr>
 <tr><td>33</td><td>USD1_CAN</td></tr>
+<<<<<<< HEAD
+=======
+<tr><td>34</td><td>Benewake_CAN</td></tr>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 <tr><td>100</td><td>SITL</td></tr>
 </table>
 </ul>
@@ -25700,6 +25922,25 @@ DO NOT EDIT
 </ul>
 
 
+<<<<<<< HEAD
+=======
+<h2>CAN receive ID (RNGFND4_RECV_ID)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>The receive ID of the CAN frames. A value of zero means all IDs are accepted.</p>
+<ul>
+<li>Range: 0 65535</li>
+</ul>
+
+
+<h2>Minimum signal strength (RNGFND4_SNR_MIN)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Minimum signal strength (SNR) to accept distance</p>
+<ul>
+<li>Range: 0 65535</li>
+</ul>
+
+
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 <h1>RNGFND5_ Parameters</h1>
 
 
@@ -25741,6 +25982,10 @@ DO NOT EDIT
 <tr><td>31</td><td>GYUS42v2</td></tr>
 <tr><td>32</td><td>MSP</td></tr>
 <tr><td>33</td><td>USD1_CAN</td></tr>
+<<<<<<< HEAD
+=======
+<tr><td>34</td><td>Benewake_CAN</td></tr>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 <tr><td>100</td><td>SITL</td></tr>
 </table>
 </ul>
@@ -25973,6 +26218,25 @@ DO NOT EDIT
 </ul>
 
 
+<<<<<<< HEAD
+=======
+<h2>CAN receive ID (RNGFND5_RECV_ID)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>The receive ID of the CAN frames. A value of zero means all IDs are accepted.</p>
+<ul>
+<li>Range: 0 65535</li>
+</ul>
+
+
+<h2>Minimum signal strength (RNGFND5_SNR_MIN)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Minimum signal strength (SNR) to accept distance</p>
+<ul>
+<li>Range: 0 65535</li>
+</ul>
+
+
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 <h1>RNGFND6_ Parameters</h1>
 
 
@@ -26014,6 +26278,10 @@ DO NOT EDIT
 <tr><td>31</td><td>GYUS42v2</td></tr>
 <tr><td>32</td><td>MSP</td></tr>
 <tr><td>33</td><td>USD1_CAN</td></tr>
+<<<<<<< HEAD
+=======
+<tr><td>34</td><td>Benewake_CAN</td></tr>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 <tr><td>100</td><td>SITL</td></tr>
 </table>
 </ul>
@@ -26246,6 +26514,25 @@ DO NOT EDIT
 </ul>
 
 
+<<<<<<< HEAD
+=======
+<h2>CAN receive ID (RNGFND6_RECV_ID)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>The receive ID of the CAN frames. A value of zero means all IDs are accepted.</p>
+<ul>
+<li>Range: 0 65535</li>
+</ul>
+
+
+<h2>Minimum signal strength (RNGFND6_SNR_MIN)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Minimum signal strength (SNR) to accept distance</p>
+<ul>
+<li>Range: 0 65535</li>
+</ul>
+
+
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 <h1>RNGFND7_ Parameters</h1>
 
 
@@ -26287,6 +26574,10 @@ DO NOT EDIT
 <tr><td>31</td><td>GYUS42v2</td></tr>
 <tr><td>32</td><td>MSP</td></tr>
 <tr><td>33</td><td>USD1_CAN</td></tr>
+<<<<<<< HEAD
+=======
+<tr><td>34</td><td>Benewake_CAN</td></tr>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 <tr><td>100</td><td>SITL</td></tr>
 </table>
 </ul>
@@ -26519,6 +26810,25 @@ DO NOT EDIT
 </ul>
 
 
+<<<<<<< HEAD
+=======
+<h2>CAN receive ID (RNGFND7_RECV_ID)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>The receive ID of the CAN frames. A value of zero means all IDs are accepted.</p>
+<ul>
+<li>Range: 0 65535</li>
+</ul>
+
+
+<h2>Minimum signal strength (RNGFND7_SNR_MIN)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Minimum signal strength (SNR) to accept distance</p>
+<ul>
+<li>Range: 0 65535</li>
+</ul>
+
+
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 <h1>RNGFND8_ Parameters</h1>
 
 
@@ -26560,6 +26870,10 @@ DO NOT EDIT
 <tr><td>31</td><td>GYUS42v2</td></tr>
 <tr><td>32</td><td>MSP</td></tr>
 <tr><td>33</td><td>USD1_CAN</td></tr>
+<<<<<<< HEAD
+=======
+<tr><td>34</td><td>Benewake_CAN</td></tr>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 <tr><td>100</td><td>SITL</td></tr>
 </table>
 </ul>
@@ -26792,6 +27106,25 @@ DO NOT EDIT
 </ul>
 
 
+<<<<<<< HEAD
+=======
+<h2>CAN receive ID (RNGFND8_RECV_ID)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>The receive ID of the CAN frames. A value of zero means all IDs are accepted.</p>
+<ul>
+<li>Range: 0 65535</li>
+</ul>
+
+
+<h2>Minimum signal strength (RNGFND8_SNR_MIN)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Minimum signal strength (SNR) to accept distance</p>
+<ul>
+<li>Range: 0 65535</li>
+</ul>
+
+
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 <h1>RNGFND9_ Parameters</h1>
 
 
@@ -26833,6 +27166,10 @@ DO NOT EDIT
 <tr><td>31</td><td>GYUS42v2</td></tr>
 <tr><td>32</td><td>MSP</td></tr>
 <tr><td>33</td><td>USD1_CAN</td></tr>
+<<<<<<< HEAD
+=======
+<tr><td>34</td><td>Benewake_CAN</td></tr>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 <tr><td>100</td><td>SITL</td></tr>
 </table>
 </ul>
@@ -27065,6 +27402,25 @@ DO NOT EDIT
 </ul>
 
 
+<<<<<<< HEAD
+=======
+<h2>CAN receive ID (RNGFND9_RECV_ID)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>The receive ID of the CAN frames. A value of zero means all IDs are accepted.</p>
+<ul>
+<li>Range: 0 65535</li>
+</ul>
+
+
+<h2>Minimum signal strength (RNGFND9_SNR_MIN)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Minimum signal strength (SNR) to accept distance</p>
+<ul>
+<li>Range: 0 65535</li>
+</ul>
+
+
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 <h1>RNGFNDA_ Parameters</h1>
 
 
@@ -27106,6 +27462,10 @@ DO NOT EDIT
 <tr><td>31</td><td>GYUS42v2</td></tr>
 <tr><td>32</td><td>MSP</td></tr>
 <tr><td>33</td><td>USD1_CAN</td></tr>
+<<<<<<< HEAD
+=======
+<tr><td>34</td><td>Benewake_CAN</td></tr>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 <tr><td>100</td><td>SITL</td></tr>
 </table>
 </ul>
@@ -27338,6 +27698,25 @@ DO NOT EDIT
 </ul>
 
 
+<<<<<<< HEAD
+=======
+<h2>CAN receive ID (RNGFNDA_RECV_ID)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>The receive ID of the CAN frames. A value of zero means all IDs are accepted.</p>
+<ul>
+<li>Range: 0 65535</li>
+</ul>
+
+
+<h2>Minimum signal strength (RNGFNDA_SNR_MIN)</h2><em>Note: This parameter is for advanced users</em><br>
+
+<p>Minimum signal strength (SNR) to accept distance</p>
+<ul>
+<li>Range: 0 65535</li>
+</ul>
+
+
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 <h1>RPM Parameters</h1>
 
 
@@ -27723,6 +28102,10 @@ DO NOT EDIT
 <tr><td>35</td><td>ADSB</td></tr>
 <tr><td>36</td><td>AHRS</td></tr>
 <tr><td>37</td><td>SmartAudio</td></tr>
+<<<<<<< HEAD
+=======
+<tr><td>38</td><td>FETtecOneWire</td></tr>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -27793,6 +28176,10 @@ DO NOT EDIT
 <tr><td>35</td><td>ADSB</td></tr>
 <tr><td>36</td><td>AHRS</td></tr>
 <tr><td>37</td><td>SmartAudio</td></tr>
+<<<<<<< HEAD
+=======
+<tr><td>38</td><td>FETtecOneWire</td></tr>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -27863,6 +28250,10 @@ DO NOT EDIT
 <tr><td>35</td><td>ADSB</td></tr>
 <tr><td>36</td><td>AHRS</td></tr>
 <tr><td>37</td><td>SmartAudio</td></tr>
+<<<<<<< HEAD
+=======
+<tr><td>38</td><td>FETtecOneWire</td></tr>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -27933,6 +28324,10 @@ DO NOT EDIT
 <tr><td>35</td><td>ADSB</td></tr>
 <tr><td>36</td><td>AHRS</td></tr>
 <tr><td>37</td><td>SmartAudio</td></tr>
+<<<<<<< HEAD
+=======
+<tr><td>38</td><td>FETtecOneWire</td></tr>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -28003,6 +28398,10 @@ DO NOT EDIT
 <tr><td>35</td><td>ADSB</td></tr>
 <tr><td>36</td><td>AHRS</td></tr>
 <tr><td>37</td><td>SmartAudio</td></tr>
+<<<<<<< HEAD
+=======
+<tr><td>38</td><td>FETtecOneWire</td></tr>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -28073,6 +28472,10 @@ DO NOT EDIT
 <tr><td>35</td><td>ADSB</td></tr>
 <tr><td>36</td><td>AHRS</td></tr>
 <tr><td>37</td><td>SmartAudio</td></tr>
+<<<<<<< HEAD
+=======
+<tr><td>38</td><td>FETtecOneWire</td></tr>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -28239,6 +28642,11 @@ DO NOT EDIT
 <tr><td>34</td><td>AirSpeed</td></tr>
 <tr><td>35</td><td>ADSB</td></tr>
 <tr><td>36</td><td>AHRS</td></tr>
+<<<<<<< HEAD
+=======
+<tr><td>37</td><td>SmartAudio</td></tr>
+<tr><td>38</td><td>FETtecOneWire</td></tr>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -28317,6 +28725,11 @@ DO NOT EDIT
 <tr><td>34</td><td>AirSpeed</td></tr>
 <tr><td>35</td><td>ADSB</td></tr>
 <tr><td>36</td><td>AHRS</td></tr>
+<<<<<<< HEAD
+=======
+<tr><td>37</td><td>SmartAudio</td></tr>
+<tr><td>38</td><td>FETtecOneWire</td></tr>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 </table>
 <li>RebootRequired: True</li>
 </ul>
@@ -31096,6 +31509,37 @@ DO NOT EDIT
 </ul>
 
 
+<<<<<<< HEAD
+=======
+<h1>SERVO_FTW_ Parameters</h1>
+
+
+<h2>Servo channel output bitmask (SERVO_FTW_MASK)</h2>
+
+<p>Servo channel mask specifying FETtec ESC output.</p>
+<ul>
+<li>Bitmask: 0:SERVO1,1:SERVO2,2:SERVO3,3:SERVO4,4:SERVO5,5:SERVO6,6:SERVO7,7:SERVO8,8:SERVO9,9:SERVO10,10:SERVO11,11:SERVO12</li>
+<li>RebootRequired: True</li>
+</ul>
+
+
+<h2>Servo channel reverse rotation bitmask (SERVO_FTW_RVMASK)</h2>
+
+<p>Servo channel mask to reverse rotation of FETtec ESC outputs.</p>
+<ul>
+<li>Bitmask: 0:SERVO1,1:SERVO2,2:SERVO3,3:SERVO4,4:SERVO5,5:SERVO6,6:SERVO7,7:SERVO8,8:SERVO9,9:SERVO10,10:SERVO11,11:SERVO12</li>
+</ul>
+
+
+<h2>Nr. electrical poles (SERVO_FTW_POLES)</h2>
+
+<p>Number of motor electrical poles</p>
+<ul>
+<li>Range: 2 50</li>
+</ul>
+
+
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 <h1>SERVO_ROB_ Parameters</h1>
 
 

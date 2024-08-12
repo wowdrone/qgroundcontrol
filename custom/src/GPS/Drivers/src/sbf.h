@@ -37,6 +37,10 @@
  * Septentrio protocol as defined in PPSDK SBF Reference Guide 4.1.8
  *
  * @author Matej Franceskin <Matej.Franceskin@gmail.com>
+<<<<<<< HEAD
+=======
+ * @author <a href="https://github.com/SeppeG">Seppe Geuens</a>
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
  *
  */
 
@@ -47,6 +51,7 @@
 #include "rtcm.h"
 #include "../../definitions.h"
 
+<<<<<<< HEAD
 #define SBF_CONFIG_FORCE_INPUT "SSSSSSSSSS\n"
 
 #define SBF_CONFIG_BAUDRATE "setCOMSettings, COM1, baud%d\n"
@@ -69,6 +74,25 @@
 	"setSBFOutput, Stream4, COM1, PVTGeodetic, msec100\n" \
 	"setFileNaming, DSK1, Incremental\n" \
 	"setFileNaming, DSK1, , 'px4'\n"
+=======
+
+#define SBF_CONFIG_FORCE_INPUT "SSSSSSSSSS\n"
+
+#define SBF_CONFIG_BAUDRATE "setCOMSettings, %s, baud%d\n"
+
+#define SBF_CONFIG_RESET "setSBFOutput, Stream1, %s, none, off\n"
+
+#define SBF_CONFIG_RECEIVER_DYNAMICS "setReceiverDynamics, %s, UAV\n"
+
+#define SBF_CONFIG_ATTITUDE_OFFSET "setAttitudeOffset, %.3f, %.3f\n"
+
+#define SBF_TX_CFG_PRT_BAUDRATE 115200
+
+#define SBF_DATA_IO "setDataInOut, %s, Auto, SBF\n"
+
+#define SBF_CONFIG "setSBFOutput, Stream1, %s, PVTGeodetic+VelCovGeodetic+DOP+AttEuler+AttCovEuler, msec100\n"
+
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 
 #define SBF_CONFIG_RTCM "" \
 	"setDataInOut, USB1, Auto, RTCMv3+SBF\n" \
@@ -112,12 +136,21 @@
 #define SBF_ID_PVTGeodetic    4007
 #define SBF_ID_ChannelStatus  4013
 #define SBF_ID_VelCovGeodetic 5908
+<<<<<<< HEAD
+=======
+#define SBF_ID_AttEuler       5938
+#define SBF_ID_AttCovEuler    5939
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 
 /*** SBF protocol binary message and payload definitions ***/
 #pragma pack(push, 1)
 
 typedef struct {
+<<<<<<< HEAD
 	uint8_t  mode_type: 4;       /**< Bit field indicating the PVT mode type, as follows:
+=======
+	uint8_t mode_type: 4;       /**< Bit field indicating the PVT mode type, as follows:
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
                                      0: No PVT available (the Error field indicates the cause of the absence of the PVT solution)
                                      1: Stand-Alone PVT
                                      2: Differential PVT
@@ -128,11 +161,19 @@ typedef struct {
                                      7: moving-base RTK with fixed ambiguities
                                      8: moving-base RTK with float ambiguities
                                      10:Precise Point Positioning (PPP) */
+<<<<<<< HEAD
 	uint8_t  mode_reserved: 2;   /**< Reserved */
 	uint8_t  mode_base_fixed: 1; /**< Set if the user has entered the command setPVTMode,base,auto and the receiver
                                      is still in the process of determining its fixed position. */
 	uint8_t  mode_2d: 1;        /**< 2D/3D flag: set in 2D mode(height assumed constant and not computed). */
 	uint8_t  error;             /**< PVT error code. The following values are defined:
+=======
+	uint8_t mode_reserved: 2;   /**< Reserved */
+	uint8_t mode_base_fixed: 1; /**< Set if the user has entered the command setPVTMode,base,auto and the receiver
+                                     is still in the process of determining its fixed position. */
+	uint8_t mode_2d: 1;        /**< 2D/3D flag: set in 2D mode(height assumed constant and not computed). */
+	uint8_t error;             /**< PVT error code. The following values are defined:
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
                                      0: No Error
                                      1: Not enough measurements
                                      2: Not enough ephemerides available
@@ -145,6 +186,7 @@ typedef struct {
                                      9: Base station coordinates unavailable
                                      10:Ambiguities not fixed and user requested to only output RTK-fixed positions
                                      Note: if this field has a non-zero value, all following fields are set to their Do-Not-Use value. */
+<<<<<<< HEAD
 	double   latitude;          /**< Marker latitude, from -PI/2 to +PI/2, positive North of Equator */
 	double   longitude;         /**< Marker longitude, from -PI to +PI, positive East of Greenwich */
 	double   height;            /**< Marker ellipsoidal height (with respect to the ellipsoid specified by Datum) */
@@ -164,6 +206,27 @@ typedef struct {
                                      1:Galileotime
                                      3:GLONASStime */
 	uint8_t  datum;             /**< This field defines in which datum the coordinates are expressed:
+=======
+	double latitude;          /**< Marker latitude, from -PI/2 to +PI/2, positive North of Equator */
+	double longitude;         /**< Marker longitude, from -PI to +PI, positive East of Greenwich */
+	double height;            /**< Marker ellipsoidal height (with respect to the ellipsoid specified by Datum) */
+	float undulation;        /**< Geoid undulation computed from the global geoid model defined in
+                                     the document 'Technical Characteristics of the NAVSTAR GPS, NATO, June 1991' */
+	float vn;                /**< Velocity in the North direction */
+	float ve;                /**< Velocity in the East direction */
+	float vu;                /**< Velocity in the Up direction */
+	float cog;               /**< Course over ground: this is defined as the angle of the vehicle with respect
+                                     to the local level North, ranging from 0 to 360, and increasing towards east.
+                                     Set to the do-not-use value when the speed is lower than 0.1m/s. */
+	double rx_clk_bias;       /**< Receiver clock bias relative to system time reported in the Time System field.
+                                     To transfer the receiver time to the system time, use: tGPS/GST=trx-RxClkBias */
+	float RxClkDrift;        /**< Receiver clock drift relative to system time (relative frequency error) */
+	uint8_t time_system;       /**< Time system of which the offset is provided in this sub-block:
+                                     0:GPStime
+                                     1:Galileotime
+                                     3:GLONASStime */
+	uint8_t datum;             /**< This field defines in which datum the coordinates are expressed:
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
                                      0: WGS84/ITRS
                                      19: Datum equal to that used by the DGNSS/RTK basestation
                                      30: ETRS89(ETRF2000 realization)
@@ -173,8 +236,13 @@ typedef struct {
                                      34: GDA94(2010), Geocentric Datum of Australia (2010)
                                      250:First user-defined datum
                                      251:Second user-defined datum */
+<<<<<<< HEAD
 	uint8_t  nr_sv;             /**< Total number of satellites used in the PVT computation. */
 	uint8_t  wa_corr_info;      /**< Bit field providing information about which wide area corrections have been applied:
+=======
+	uint8_t nr_sv;             /**< Total number of satellites used in the PVT computation. */
+	uint8_t wa_corr_info;      /**< Bit field providing information about which wide area corrections have been applied:
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
                                      Bit 0: set if orbit and satellite clock correction information is used
                                      Bit 1: set if range correction information is used
                                      Bit 2: set if ionospheric information is used
@@ -202,7 +270,11 @@ typedef struct {
 } sbf_payload_pvt_geodetic_t;
 
 typedef struct {
+<<<<<<< HEAD
 	uint8_t  mode_type: 4;       /**< Bit field indicating the PVT mode type, as follows:
+=======
+	uint8_t mode_type: 4;       /**< Bit field indicating the PVT mode type, as follows:
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
                                      0: No PVT available (the Error field indicates the cause of the absence of the PVT solution)
                                      1: Stand-Alone PVT
                                      2: Differential PVT
@@ -213,11 +285,19 @@ typedef struct {
                                      7: moving-base RTK with fixed ambiguities
                                      8: moving-base RTK with float ambiguities
                                      10:Precise Point Positioning (PPP) */
+<<<<<<< HEAD
 	uint8_t  mode_reserved: 2;  /**< Reserved */
 	uint8_t  mode_base_fixed: 1;/**< Set if the user has entered the command setPVTMode,base,auto and the receiver
                                      is still in the process of determining its fixed position. */
 	uint8_t  mode_2d: 1;        /**< 2D/3D flag: set in 2D mode(height assumed constant and not computed). */
 	uint8_t  error;             /**< PVT error code. The following values are defined:
+=======
+	uint8_t mode_reserved: 2;  /**< Reserved */
+	uint8_t mode_base_fixed: 1;/**< Set if the user has entered the command setPVTMode,base,auto and the receiver
+                                     is still in the process of determining its fixed position. */
+	uint8_t mode_2d: 1;        /**< 2D/3D flag: set in 2D mode(height assumed constant and not computed). */
+	uint8_t error;             /**< PVT error code. The following values are defined:
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
                                      0: No Error
                                      1: Not enough measurements
                                      2: Not enough ephemerides available
@@ -234,8 +314,13 @@ typedef struct {
 	float cov_ve_ve;            /**< Variance of the east-velocity estimate */
 	float cov_vu_vu;            /**< Variance of the up - velocity estimate */
 	float cov_dt_dt;            /**< Variance of the clock drift estimate */
+<<<<<<< HEAD
 	float cov_vn_ve;			/**< Covariance between the north - and east - velocity estimates */
 	float cov_vn_vu;			/**< Covariance between the north - and up - velocity estimates */
+=======
+	float cov_vn_ve;            /**< Covariance between the north - and east - velocity estimates */
+	float cov_vn_vu;            /**< Covariance between the north - and up - velocity estimates */
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 	float cov_vn_dt;            /**< Covariance between the north - velocity and clock drift estimates */
 	float cov_ve_vu;            /**< Covariance between the east - and up - velocity estimates */
 	float cov_ve_dt;            /**< Covariance between the east - velocity and clock drift estimates */
@@ -261,13 +346,74 @@ typedef struct {
 	uint16_t pvt_info;
 } sbf_payload_channel_state_info_t;
 
+<<<<<<< HEAD
+=======
+typedef struct {
+	uint8_t nr_sv;                  /**< The average over all antennas of the number of satellites currently included in the attitude calculations. */
+	uint8_t error_aux1: 2;          /**< Bits 0-1: Error code for Main-Aux1 baseline:
+                                            0: No error
+                                            1: Not enough measurements
+                                            2: Reserved
+                                            3: Reserved */
+	uint8_t error_aux2: 2;          /**< Bits 2-3: Error code for Main-Aux2 baseline, same definition as bit 0-1. */
+	uint8_t error_reserved: 3;      /**< Bits 4-6: Reserved */
+uint8_t error_not_requested:
+	1; /**< Bit 7: Set when GNSS-based attitude not requested by user. In that case, the other bits are all zero. */
+
+	uint16_t mode;                  /**< Attitude mode code:
+                                            0: No attitude
+                                            1: Heading, pitch (roll = 0), aux antenna positions obtained with float
+                                            ambiguities
+                                            2: Heading, pitch (roll = 0), aux antenna positions obtained with fixed
+                                            ambiguities
+                                            3: Heading, pitch, roll, aux antenna positions obtained with float ambiguities
+                                            4: Heading, pitch, roll, aux antenna positions obtained with fixed ambiguities */
+	uint16_t reserved;              /**< Reserved for future use, to be ignored by decoding software */
+
+	float heading;                  /**< Heading */
+	float pitch;                    /**< Pitch */
+	float roll;                     /**< Roll */
+	float pitch_dot;                /**< Rate of change of the pitch angle */
+	float roll_dot;                 /**< Rate of change of the roll angle */
+	float heading_dot;              /**< Rate of change of the heading angle */
+} sbf_payload_att_euler;
+
+typedef struct {
+	uint8_t reserved;               /**< Reserved for future use, to be ignored by decoding software */
+
+	uint8_t error_aux1: 2;          /**< Bits 0-1: Error code for Main-Aux1 baseline:
+                                            0: No error
+                                            1: Not enough measurements
+                                            2: Reserved
+                                            3: Reserved */
+	uint8_t error_aux2: 2;          /**< Bits 2-3: Error code for Main-Aux2 baseline, same definition as bit 0-1. */
+	uint8_t error_reserved: 3;      /**< Bits 4-6: Reserved */
+uint8_t error_not_requested:
+	1; /**< Bit 7: Set when GNSS-based attitude not requested by user. In that case, the other bits are all zero. */
+
+	float cov_headhead;             /**< Variance of the heading estimate */
+	float cov_pitchpitch;           /**< Variance of the pitch estimate */
+	float cov_rollroll;             /**< Variance of the roll estimate */
+	float cov_headpitch;            /**< Covariance between Euler angle estimates.
+                                         Future functionality. The values are currently set to their Do-Not-Use values. */
+	float cov_headroll;             /**< Covariance between Euler angle estimates.
+                                         Future functionality. The values are currently set to their Do-Not-Use values. */
+	float cov_pitchroll;            /**< Covariance between Euler angle estimates.
+                                         Future functionality. The values are currently set to their Do-Not-Use values. */
+} sbf_payload_att_cov_euler;
+
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 /* General message and payload buffer union */
 
 typedef struct {
 	uint16_t sync;              /** The Sync field is a 2-byte array always set to 0x24, 0x40. The first byte of every SBF block has
 									hexadecimal value 24 (decimal 36, ASCII '$'). The second byte of every SBF block has hexadecimal
 									value 40 (decimal 64, ASCII '@'). */
+<<<<<<< HEAD
 	uint16_t crc16;				/** The CRC field is the 16-bit CRC of all the bytes in an SBF block from and including the ID field
+=======
+	uint16_t crc16;                /** The CRC field is the 16-bit CRC of all the bytes in an SBF block from and including the ID field
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 									to the last byte of the block. The generator polynomial for this CRC is the so-called CRC-CCITT
 									polynomial: x 16 + x 12 + x 5 + x 0 . The CRC is computed in the forward direction using a seed of 0, no
 									reverse and no final XOR. */
@@ -286,9 +432,17 @@ uint8_t msg_revision:
                                      which occur every 1024 weeks. By definition of the Galileo system time,
                                      WNc is also the Galileo week number + 1024. */
 	union {
+<<<<<<< HEAD
 		sbf_payload_pvt_geodetic_t  payload_pvt_geodetic;
 		sbf_payload_vel_cov_geodetic_t payload_vel_col_geodetic;
 		sbf_payload_dop_t payload_dop;
+=======
+		sbf_payload_pvt_geodetic_t payload_pvt_geodetic;
+		sbf_payload_vel_cov_geodetic_t payload_vel_col_geodetic;
+		sbf_payload_dop_t payload_dop;
+		sbf_payload_att_euler payload_att_euler;
+		sbf_payload_att_cov_euler payload_att_cov_euler;
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 	};
 
 	uint8_t padding[16];
@@ -308,6 +462,7 @@ typedef enum {
 class GPSDriverSBF : public GPSBaseStationSupport
 {
 public:
+<<<<<<< HEAD
 	GPSDriverSBF(GPSCallbackPtr callback, void *callback_user,
 		     sensor_gps_s *gps_position,
 		     satellite_info_s *satellite_info,
@@ -317,6 +472,25 @@ public:
 
 	int receive(unsigned timeout) override;
 	int configure(unsigned &baudrate, const GPSConfig &config) override;
+=======
+	/**
+	 * @param heading_offset heading offset in radians [-pi, pi]. It is subtracted from the measurement.
+	 * @param pitch_offset pitch_offset in deg [-90, 90]. This will be send as a cmd to the receiver.
+	 */
+	GPSDriverSBF(GPSCallbackPtr callback,
+		     void *callback_user,
+		     struct sensor_gps_s *gps_position,
+		     satellite_info_s *satellite_info = nullptr,
+		     float heading_offset = 0.f,
+		     float pitch_offset = 0.f);
+
+	virtual ~GPSDriverSBF();
+
+	int receive(unsigned timeout) override;
+
+	int configure(unsigned &baudrate, const GPSConfig &config) override;
+
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 	int reset(GPSRestartType restart_type) override;
 
 private:
@@ -332,7 +506,11 @@ private:
 	int payloadRxAdd(const uint8_t b);
 
 	/**
+<<<<<<< HEAD
 	 * @brief Finish payload rx
+=======
+	 * @brief Parses incoming SBF blocks
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 	 */
 	int payloadRxDone(void);
 
@@ -353,6 +531,7 @@ private:
 	 */
 	bool sendMessageAndWaitForAck(const char *msg, const int timeout);
 
+<<<<<<< HEAD
 	sensor_gps_s *_gps_position { nullptr };
 	satellite_info_s *_satellite_info { nullptr };
 	uint8_t _dynamic_model{ 7 };
@@ -364,6 +543,28 @@ private:
 	sbf_buf_t _buf;
 	OutputMode _output_mode { OutputMode::GPS };
 	RTCMParsing	*_rtcm_parsing { nullptr };
+=======
+	/**
+	 * @brief Configures the SBF Output blocks
+	 * @return true on success, false on write error (errno set) or ack wait timeout
+	 */
+	bool configSBFOutput(const char *com_port);
+
+	sensor_gps_s *_gps_position{nullptr};
+	satellite_info_s *_satellite_info{nullptr};
+	uint8_t _dynamic_model{7};
+	uint64_t _last_timestamp_time{0};
+	bool _configured{false};
+	uint8_t _msg_status{0};
+	sbf_decode_state_t _decode_state{SBF_DECODE_SYNC1};
+	uint16_t _rx_payload_index{0};
+	sbf_buf_t _buf;
+	OutputMode _output_mode{OutputMode::GPS};
+	RTCMParsing *_rtcm_parsing{nullptr};
+
+	const float _heading_offset;
+	const float _pitch_offset;
+>>>>>>> db7cd8b74328ef81d55617a145cde483a2e6e8db
 };
 
 uint16_t crc16(const uint8_t *buf, uint32_t len);
