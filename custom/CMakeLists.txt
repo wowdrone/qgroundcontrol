@@ -1,8 +1,12 @@
-cmake_minimum_required(VERSION 3.14)
+cmake_minimum_required(VERSION 3.22.1)
 
+# Project Name
 project(CustomQGCPlugin)
 
+# Message to indicate custom plugin is being added
 message(STATUS "Adding Custom Plugin")
+
+# Find the required Qt6 components
 find_package(Qt6 REQUIRED COMPONENTS Core)
 
 # Enable custom build
@@ -43,7 +47,7 @@ if(PYTHON_EXECUTABLE)
     message(STATUS "Python error: ${PYTHON_ERROR}")
 endif()
 
-# Our own, custom resources
+# Custom resources
 list(APPEND CUSTOM_RESOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/qgcimages.qrc
     ${CMAKE_CURRENT_SOURCE_DIR}/qgcresources.qrc
@@ -52,8 +56,10 @@ list(APPEND CUSTOM_RESOURCES
 )
 set(QGC_RESOURCES ${CUSTOM_RESOURCES} PARENT_SCOPE)
 
+# QML import path
 set(QML_IMPORT_PATH "${CMAKE_CURRENT_SOURCE_DIR}/res" CACHE STRING "Extra qml import paths" PARENT_SCOPE)
 
+# Add library for the custom plugin
 qt_add_library(CustomPlugin STATIC
     src/CustomPlugin.cc
     src/CustomPlugin.h
@@ -65,6 +71,7 @@ qt_add_library(CustomPlugin STATIC
     src/FirmwarePlugin/CustomFirmwarePluginFactory.h
 )
 
+# Link necessary libraries
 target_link_libraries(CustomPlugin
     PRIVATE
         FactSystem
@@ -80,12 +87,12 @@ target_link_libraries(CustomPlugin
         Settings
 )
 
+# Include directories for the plugin
 target_include_directories(CustomPlugin
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/src
         ${CMAKE_CURRENT_SOURCE_DIR}/src/AutoPilotPlugin
         ${CMAKE_CURRENT_SOURCE_DIR}/src/FirmwarePlugin
-        # Add include directories for QGroundControl source
         ${CMAKE_SOURCE_DIR}/libs
         ${CMAKE_SOURCE_DIR}/src
         ${CMAKE_SOURCE_DIR}/src/AutoPilotPlugins/PX4
@@ -97,4 +104,3 @@ target_include_directories(CustomPlugin
         ${CMAKE_SOURCE_DIR}/src/QmlControls
         ${CMAKE_SOURCE_DIR}/src/MissionManager
 )
-
