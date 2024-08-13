@@ -1,8 +1,11 @@
-﻿# Specify the minimum CMake version required
+# Specify the minimum CMake version required
 cmake_minimum_required(VERSION 3.22.1)
 
 # Project name and version
 project(QGroundControl VERSION 1.0 DESCRIPTION "QGroundControl Project" LANGUAGES C CXX)
+
+# Enable AUTOMOC for Qt meta-object compilation
+set(CMAKE_AUTOMOC ON)
 
 message(STATUS "Adding Custom Plugin")
 find_package(Qt6 REQUIRED COMPONENTS Core Quick)
@@ -99,6 +102,9 @@ qt_add_qml_module(CustomPlugin
         QGroundControl.ScreenTools
 )
 
+# Ensure metatypes are extracted if needed
+qt6_extract_metatypes(CustomPlugin)
+
 # Ensure QML import paths are set
 set_target_properties(CustomPlugin PROPERTIES
     QML_IMPORT_PATHS "${QML_IMPORT_PATH}"
@@ -106,3 +112,4 @@ set_target_properties(CustomPlugin PROPERTIES
 
 # Print QML import paths to debug
 message(STATUS "QML Import Path: ${QML_IMPORT_PATH}")
+
