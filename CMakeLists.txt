@@ -91,6 +91,7 @@ qt_add_qml_module(CustomPlugin
     QML_FILES ${QML_SOURCES}
     RESOURCES ${QML_RESOURCES}
     OUTPUT_TARGETS CustomPlugin_targets
+    OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/QGroundControl/CustomPlugin
     IMPORT_PATH ${QML_IMPORT_PATH}
     IMPORTS
         QtQuick
@@ -101,6 +102,7 @@ qt_add_qml_module(CustomPlugin
         QGroundControl.Palette
         QGroundControl.ScreenTools
 )
+
 
 # Ensure metatypes are extracted if needed
 qt6_extract_metatypes(CustomPlugin)
