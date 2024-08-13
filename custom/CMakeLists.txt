@@ -1,8 +1,11 @@
-﻿# Specify the minimum CMake version required
+# Specify the minimum CMake version required
 cmake_minimum_required(VERSION 3.22.1)
 
 # Project name and version
 project(QGroundControl VERSION 1.0 DESCRIPTION "QGroundControl Project" LANGUAGES C CXX)
+
+# Enable AUTOMOC for Qt meta-object compilation
+set(CMAKE_AUTOMOC ON)
 
 message(STATUS "Adding Custom Plugin")
 find_package(Qt6 REQUIRED COMPONENTS Core Quick)
@@ -84,10 +87,11 @@ file(GLOB QML_RESOURCES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_SOU
 qt_add_qml_module(CustomPlugin
     URI QGroundControl.CustomPlugin
     VERSION 1.0
-    RESOURCE_PREFIX "/"
+    RESOURCE_PREFIX "/"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
     QML_FILES ${QML_SOURCES}
     RESOURCES ${QML_RESOURCES}
     OUTPUT_TARGETS CustomPlugin_targets
+    OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/QGroundControl/CustomPlugin
     IMPORT_PATH ${QML_IMPORT_PATH}
     IMPORTS
         QtQuick
@@ -99,6 +103,10 @@ qt_add_qml_module(CustomPlugin
         QGroundControl.ScreenTools
 )
 
+
+# Ensure metatypes are extracted if needed
+qt6_extract_metatypes(CustomPlugin)
+
 # Ensure QML import paths are set
 set_target_properties(CustomPlugin PROPERTIES
     QML_IMPORT_PATHS "${QML_IMPORT_PATH}"
@@ -106,3 +114,4 @@ set_target_properties(CustomPlugin PROPERTIES
 
 # Print QML import paths to debug
 message(STATUS "QML Import Path: ${QML_IMPORT_PATH}")
+
