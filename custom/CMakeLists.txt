@@ -1,13 +1,11 @@
+﻿# Specify the minimum CMake version required
 cmake_minimum_required(VERSION 3.22.1)
 
-# Project Name
-project(CustomQGCPlugin)
+# Project name and version
+project(QGroundControl VERSION 1.0 DESCRIPTION "QGroundControl Project" LANGUAGES C CXX)
 
-# Message to indicate custom plugin is being added
 message(STATUS "Adding Custom Plugin")
-
-# Find the required Qt6 components
-find_package(Qt6 REQUIRED COMPONENTS Core)
+find_package(Qt6 REQUIRED COMPONENTS Core Quick)
 
 # Enable custom build
 set_property(DIRECTORY ${CMAKE_SOURCE_DIR}
@@ -17,37 +15,23 @@ set_property(DIRECTORY ${CMAKE_SOURCE_DIR}
     CUSTOMCLASS=CustomPlugin
 )
 
-# Ensure Python is found
+# Find Python
 find_package(Python3 COMPONENTS Interpreter)
-if (Python3_FOUND)
-    set(PYTHON_EXECUTABLE ${Python3_EXECUTABLE})
-    message(STATUS "Python found: ${Python3_EXECUTABLE}")
-else()
-    find_package(PythonInterp)
-    if (PYTHONINTERP_FOUND)
-        set(PYTHON_EXECUTABLE ${PYTHON_EXECUTABLE})
-        message(STATUS "Python found: ${PYTHON_EXECUTABLE}")
-    else()
-        message(FATAL_ERROR "Python not found")
-    endif()
-endif()
-
-# Run the updateqrc.py script
-if(PYTHON_EXECUTABLE)
+if(Python3_FOUND)
     execute_process(
-        COMMAND ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/updateqrc.py
+        COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/updateqrc.py
+        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
         RESULT_VARIABLE PYTHON_RESULT
         OUTPUT_VARIABLE PYTHON_OUTPUT
         ERROR_VARIABLE PYTHON_ERROR
-        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
         OUTPUT_STRIP_TRAILING_WHITESPACE
     )
-    message(STATUS "Python result: ${PYTHON_RESULT}")
-    message(STATUS "Python output: ${PYTHON_OUTPUT}")
-    message(STATUS "Python error: ${PYTHON_ERROR}")
+    message(STATUS "Python Result: ${PYTHON_RESULT}")
+    message(STATUS "Python Output: ${PYTHON_OUTPUT}")
+    message(STATUS "Python Error: ${PYTHON_ERROR}")
 endif()
 
-# Custom resources
+# Define custom resources
 list(APPEND CUSTOM_RESOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/qgcimages.qrc
     ${CMAKE_CURRENT_SOURCE_DIR}/qgcresources.qrc
@@ -56,10 +40,10 @@ list(APPEND CUSTOM_RESOURCES
 )
 set(QGC_RESOURCES ${CUSTOM_RESOURCES} PARENT_SCOPE)
 
-# QML import path
+# Set QML import path
 set(QML_IMPORT_PATH "${CMAKE_CURRENT_SOURCE_DIR}/res" CACHE STRING "Extra qml import paths" PARENT_SCOPE)
 
-# Add library for the custom plugin
+# Add custom plugin library
 qt_add_library(CustomPlugin STATIC
     src/CustomPlugin.cc
     src/CustomPlugin.h
@@ -71,7 +55,6 @@ qt_add_library(CustomPlugin STATIC
     src/FirmwarePlugin/CustomFirmwarePluginFactory.h
 )
 
-# Link necessary libraries
 target_link_libraries(CustomPlugin
     PRIVATE
         FactSystem
@@ -82,25 +65,44 @@ target_link_libraries(CustomPlugin
         Vehicle
     PUBLIC
         Qt6::Core
+        Qt6::Quick
         MAVLink
         QGC
         Settings
 )
 
-# Include directories for the plugin
 target_include_directories(CustomPlugin
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/src
         ${CMAKE_CURRENT_SOURCE_DIR}/src/AutoPilotPlugin
         ${CMAKE_CURRENT_SOURCE_DIR}/src/FirmwarePlugin
-        ${CMAKE_SOURCE_DIR}/libs
-        ${CMAKE_SOURCE_DIR}/src
-        ${CMAKE_SOURCE_DIR}/src/AutoPilotPlugins/PX4
-        ${CMAKE_SOURCE_DIR}/src/FirmwarePlugin
-        ${CMAKE_SOURCE_DIR}/src/Vehicle
-        ${CMAKE_SOURCE_DIR}/src/FactSystem
-        ${CMAKE_SOURCE_DIR}/src/Settings
-        ${CMAKE_SOURCE_DIR}/src/QtLocationPlugin
-        ${CMAKE_SOURCE_DIR}/src/QmlControls
-        ${CMAKE_SOURCE_DIR}/src/MissionManager
 )
+
+# Add QML module if needed
+file(GLOB_RECURSE QML_SOURCES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/res/*.qml)
+file(GLOB QML_RESOURCES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/res/Images/*.*)
+qt_add_qml_module(CustomPlugin
+    URI QGroundControl.CustomPlugin
+    VERSION 1.0
+    RESOURCE_PREFIX "/"
+    QML_FILES ${QML_SOURCES}
+    RESOURCES ${QML_RESOURCES}
+    OUTPUT_TARGETS CustomPlugin_targets
+    IMPORT_PATH ${QML_IMPORT_PATH}
+    IMPORTS
+        QtQuick
+        QtQuick.Controls
+        QtQuick.Layouts
+        QGroundControl
+        QGroundControl.Controls
+        QGroundControl.Palette
+        QGroundControl.ScreenTools
+)
+
+# Ensure QML import paths are set
+set_target_properties(CustomPlugin PROPERTIES
+    QML_IMPORT_PATHS "${QML_IMPORT_PATH}"
+)
+
+# Print QML import paths to debug
+message(STATUS "QML Import Path: ${QML_IMPORT_PATH}")
