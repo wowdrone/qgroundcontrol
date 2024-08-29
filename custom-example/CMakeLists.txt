@@ -11,16 +11,19 @@ set_property(DIRECTORY ${CMAKE_SOURCE_DIR}
 
 find_package(Python)
 if(PYTHON_FOUND)
+    message(STATUS "Python executable: ${PYTHON_EXECUTABLE}")
+    
     execute_process(
-        COMMAND ${PYTHON_EXECUTABLE}
+        COMMAND ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/updateqrc.py
         RESULT_VARIABLE PYTHON_RESULT
         OUTPUT_VARIABLE PYTHON_OUTPUT
         ERROR_VARIABLE PYTHON_ERROR
         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-        INPUT_FILE updateqrc.py
         OUTPUT_STRIP_TRAILING_WHITESPACE
     )
-    cmake_print_variables(RESULT_VARIABLE OUTPUT_VARIABLE ERROR_VARIABLE)
+    cmake_print_variables(PYTHON_RESULT PYTHON_OUTPUT PYTHON_ERROR)
+else()
+    message(FATAL_ERROR "Python not found!")
 endif()
 
 # Our own, custom resources

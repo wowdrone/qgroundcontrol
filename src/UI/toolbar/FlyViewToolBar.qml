@@ -73,6 +73,7 @@ Rectangle {
 
         MainStatusIndicator {
             Layout.preferredHeight: viewButtonRow.height
+            // visible               : currentToolbar === FlyViewToolBar
         }
 
         QGCButton {

@@ -30,8 +30,9 @@
     </qresource>
     <qresource prefix="/qml">
         <file alias="QGroundControl/FlightDisplay/FlyViewCustomLayer.qml">res/CustomFlyViewOverlay.qml</file>
+        <file alias="QGroundControl/Controls/MainToolbar.qml">res/CustomMainToolbar.qml</file>
     </qresource>
     <qresource prefix="/res">
-		<file alias="QGCLogoFull">res/QGCLogoFull.svg</file>
+		<file alias="wow.svg">res/wow.svg</file>
     </qresource>
 </RCC>
