@@ -93,10 +93,10 @@ Item {
     //-- Heading Indicator
     Rectangle {
         id:                         compassBar
-        height:                     ScreenTools.defaultFontPixelHeight * 1.5
-        width:                      ScreenTools.defaultFontPixelWidth  * 50
+        height:                     ScreenTools.defaultFontPixelHeight * 2
+        width:                      ScreenTools.defaultFontPixelWidth  * 100
         color:                      "#DEDEDE"
-        radius:                     2
+        radius:                     4
         clip:                       true
         anchors.top:                headingIndicator.bottom
         anchors.topMargin:          -headingIndicator.height / 2
