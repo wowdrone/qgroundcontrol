@@ -21,8 +21,8 @@ import QGroundControl.Controllers
 
 Rectangle {
     id:     _root
-    width:  parent.width
-    height: ScreenTools.toolbarHeight
+    width:  900 //parent.width
+    height: 900 //ScreenTools.toolbarHeight
     color:  qgcPal.toolbarBackground
 
     property var    _activeVehicle:     QGroundControl.multiVehicleManager.activeVehicle
@@ -41,7 +41,7 @@ Rectangle {
         anchors.right:  parent.right
         anchors.bottom: parent.bottom
         height:         1
-        color:          "black"
+        color:          "white"
         visible:        qgcPal.globalTheme === QGCPalette.Light
     }
 

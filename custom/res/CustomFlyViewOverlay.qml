@@ -93,10 +93,10 @@ Item {
     //-- Heading Indicator
     Rectangle {
         id:                         compassBar
-        height:                     ScreenTools.defaultFontPixelHeight * 2
-        width:                      ScreenTools.defaultFontPixelWidth  * 100
+        height:                     ScreenTools.defaultFontPixelHeight * 1.5
+        width:                      ScreenTools.defaultFontPixelWidth  * 50
         color:                      "#DEDEDE"
-        radius:                     4
+        radius:                     2
         clip:                       true
         anchors.top:                headingIndicator.bottom
         anchors.topMargin:          -headingIndicator.height / 2
@@ -165,7 +165,7 @@ Item {
         anchors.right:          attitudeIndicator.left
         anchors.rightMargin:    -attitudeIndicator.width / 2
         width:                  -anchors.rightMargin + compassBezel.width + (_toolsMargin * 2)
-        height:                 attitudeIndicator.height * 0.75
+        height:                 attitudeIndicator.height * 1 // * 0.75
         radius:                 2
         color:                  qgcPal.window
 

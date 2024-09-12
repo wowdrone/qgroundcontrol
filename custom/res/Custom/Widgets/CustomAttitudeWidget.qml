@@ -17,12 +17,13 @@ import QGroundControl.ScreenTools
 import QGroundControl.Palette
 import QGroundControl.FlightMap
 import Qt5Compat.GraphicalEffects
+
 Item {
     id: root
 
     property bool showPitch:    true
     property var  vehicle:      null
-    property real size
+    property real size: root.width * 3 // 3배 크기로 설정
     property bool showHeading:  false
 
     property real _rollAngle:   vehicle ? vehicle.roll.rawValue  : 0
@@ -30,6 +31,13 @@ Item {
 
     width:  size
     height: size
+
+    anchors {
+        top: parent.top
+        right: parent.right
+        topMargin: 10  // Adjust as needed
+        rightMargin: 10 // Adjust as needed
+    }
 
     Item {
         id:             instrument
@@ -103,7 +111,7 @@ Item {
         id:             mask
         anchors.fill:   instrument
         radius:         width / 2
-        color:          "black"
+        color:          "white"
         visible:        false
     }
 
