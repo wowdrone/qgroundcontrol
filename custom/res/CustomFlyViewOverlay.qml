@@ -243,13 +243,13 @@ Item {
         anchors.rightMargin:    _toolsMargin
         anchors.bottom:         parent.bottom
         anchors.right:          parent.right
-        height:                 ScreenTools.defaultFontPixelHeight * 6
+        height:                 ScreenTools.defaultFontPixelHeight * 12 //6
         width:                  height
         radius:                 height * 0.5
         color:                  qgcPal.windowShade
 
         CustomAttitudeWidget {
-            size:               parent.height * 0.95
+            size:               parent.height * 1.5 //0.95
             vehicle:            _activeVehicle
             showHeading:        false
             anchors.centerIn:   parent
