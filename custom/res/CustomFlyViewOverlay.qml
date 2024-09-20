@@ -95,7 +95,7 @@ Item {
         id:                         compassBar
         height:                     ScreenTools.defaultFontPixelHeight * 1.5
         width:                      ScreenTools.defaultFontPixelWidth  * 50
-        color:                      "bule" // "#DEDEDE"
+        color:                      "#000080" // Blue // original --> "#DEDEDE"
         radius:                     2
         clip:                       true
         anchors.top:                headingIndicator.bottom
