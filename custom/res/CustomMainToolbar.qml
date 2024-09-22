@@ -81,8 +81,12 @@ Rectangle {
         }
     }
     MainStatusIndicator {
-        Layout.preferredHeight: viewButtonRow.height
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.bottom: parent.bottom
+        width: parent.width * 0.3  // Adjust the width as needed
+        height: ScreenTools.defaultFontPixelHeight * 2  // Adjust the height as needed
     }
+
 
     QGCFlickable {
         id:                     toolsFlickable
