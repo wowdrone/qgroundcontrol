@@ -16,8 +16,8 @@ import QGroundControl
 import QGroundControl.Controls
 import QGroundControl.Palette
 import QGroundControl.MultiVehicleManager
-import QGroundControl.ScreenTools
-import QGroundControl.Controllers
+import QGroundControl.ScreenTools              
+import QGroundControl.Controllers              
 
 Rectangle {
     id:     _root
@@ -80,10 +80,12 @@ Rectangle {
             visible:            _activeVehicle && _communicationLost
         }
     }
+
     /*MainStatusIndicator {
         Layout.preferredHeight: viewButtonRow.height
     }
     */
+
     MainStatusIndicator {
         anchors.right:            parent.right
     }
