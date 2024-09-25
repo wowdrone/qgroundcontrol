@@ -45,6 +45,8 @@ qt_add_library(CustomPlugin STATIC
     src/FirmwarePlugin/CustomFirmwarePluginFactory.h
 )
 
+set_target_properties(CustomPlugin PROPERTIES AUTOMOC ON)   // added
+
 target_link_libraries(CustomPlugin
     PRIVATE
         FactSystem
