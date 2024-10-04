@@ -16,9 +16,9 @@ import QtQuick.Layouts
 import QGroundControl
 import QGroundControl.Controls
 import QGroundControl.Palette
-import QGroundControl.ScreenTools            1.0
+import QGroundControl.ScreenTools            
 
-import Custom.Widgets                        1.0
+import Custom.Widgets                        
 
 Item {
     property var parentToolInsets                       // These insets tell you what screen real estate is available for positioning the controls in your overlay
@@ -76,7 +76,7 @@ Item {
     // - we export the width of this element as the leftEdgeCenterInset so that the map will recenter if the vehicle flys behind this element
     Rectangle {
         id: exampleRectangle
-        visible: true // to see this example, set this to true. To view insets, enable the insets viewer FlyView.qml
+        visible: false // to see this example, set this to true. To view insets, enable the insets viewer FlyView.qml
         anchors.left: parent.left
         anchors.top: parent.top
         anchors.bottom: parent.bottom
@@ -354,3 +354,4 @@ Rectangle {
             }
         }
     }
+}

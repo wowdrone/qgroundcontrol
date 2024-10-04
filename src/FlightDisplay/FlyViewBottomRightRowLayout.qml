@@ -25,3 +25,21 @@ RowLayout {
         visible:    QGroundControl.corePlugin.options.flyView.showInstrumentPanel && _showSingleVehicleUI
     }
 }
+
+/*
+RowLayout {
+    anchors.horizontalCenter:   horizontalCenter
+    anchors.bottom:             bottom
+    TelemetryValuesBar {
+        Layout.alignment:       Qt.AlignBottom
+        extraWidth:         instrumentPanel.extraValuesWidth
+    }
+    
+    FlyViewInstrumentPanel {
+        id:                         instrumentPanel
+        anchors.horizontalCenter:   parent.horizontalCenter
+        anchors.bottom:             parent.bottom
+        visible:                    QGroundControl.corePlugin.options.flyView.showInstrumentPanel && _showSingleVehicleUI
+    }
+}
+*/

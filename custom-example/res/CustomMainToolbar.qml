@@ -81,7 +81,8 @@ Rectangle {
         }
     }
 
-    /*MainStatusIndicator {
+    /
+    *MainStatusIndicator {
         Layout.preferredHeight: viewButtonRow.height
     }
     */
