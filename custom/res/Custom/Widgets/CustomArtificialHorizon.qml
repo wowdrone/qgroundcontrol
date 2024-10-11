@@ -30,13 +30,14 @@ Item {
         width:  root.width  * 4
         height: root.height * 8
         anchors.centerIn: parent
+
         Rectangle {
             id:             sky
             anchors.fill:   parent
             smooth:         true
             antialiasing:   true
             gradient: Gradient {
-                GradientStop { position: 0.25; color: root.skyColor1 }
+                GradientStop { position: 0.25; color: Qt.hsla(0.5, 0.8, 0.4) } // color: root.skyColor1 }
                 GradientStop { position: 0.5;  color: root.skyColor2 }
             }
         }
