@@ -5,7 +5,8 @@ qt_add_library(GStreamerReceiver STATIC GLVideoItemStub.h)
 target_link_libraries(GStreamerReceiver PUBLIC Qt6::Quick)
 
 target_include_directories(GStreamerReceiver PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
-
+# GStreamer 헤더 파일 경로 추가!
+include_directories("C:/gstreamer/1.0/msvc_x86_64/include/gstreamer-1.0")
 if(NOT QGC_ENABLE_GST_VIDEOSTREAMING)
     return()
 endif()
