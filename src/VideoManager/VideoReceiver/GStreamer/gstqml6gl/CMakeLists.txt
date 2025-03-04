@@ -14,6 +14,8 @@ else()
     set(GST_COMPONENTS GlEgl GlPrototypes GlWayland GlX11)
     find_package(GStreamer REQUIRED COMPONENTS OPTIONAL_COMPONENTS ${GST_COMPONENTS})
     target_link_libraries(gstqml6gl PUBLIC GStreamer::GStreamer)
+    # GStreamer 헤더 파일 경로 추가!
+    include_directories("C:/gstreamer/1.0/msvc_x86_64/include/gstreamer-1.0")
 endif()
 
 target_link_libraries(gstqml6gl
