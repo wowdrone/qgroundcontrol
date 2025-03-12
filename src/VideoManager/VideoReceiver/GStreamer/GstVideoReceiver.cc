@@ -776,7 +776,8 @@ GstVideoReceiver::_makeSource(const QString& uri)
             if ((source = gst_element_factory_make("tcpclientsrc", "source")) != nullptr) {
                 g_object_set(static_cast<gpointer>(source), "host", qPrintable(url.host()), "port", url.port(), nullptr);
             }
-        } else if (isRtsp) {
+        } else if (isRtsp){
+            qDebug() << "RTSP 스트림 감지됨: " << uri;
             if ((source = gst_element_factory_make("rtspsrc", "source")) != nullptr) {
                 g_object_set(static_cast<gpointer>(source), "location", qPrintable(uri), "latency", 17, "udp-reconnect", 1, "timeout", _udpReconnect_us, NULL);
             }
